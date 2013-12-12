@@ -140,7 +140,7 @@ body {
 
 /* line 20, sass/style.scss */
 #page {
-  width: 80%;
+  width: 90%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -232,6 +232,11 @@ footer {
 
 @media all and (max-width: 568px) {
   /* line 100, sass/style.scss */
+  header .site-header {
+    font-size: 24px;
+    text-align: center;
+  }
+  /* line 104, sass/style.scss */
   header li {
     width: 100%;
   }
