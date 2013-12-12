@@ -7,7 +7,7 @@
 
 <?php get_sidebar(); ?>
 
-<div role="main">
+<div id="content" role="main">
     <?php if ( have_posts() ) : ?>
 
         <?php while ( have_posts() ) : the_post(); ?>
