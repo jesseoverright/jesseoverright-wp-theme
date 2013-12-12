@@ -3,6 +3,11 @@
     this contains global functions for the jesseoverright theme
 */
 
+function basic_theme_setup() {
+    add_editor_style( array('editor-style.css') );
+}
+
+add_action( 'after_setup_theme', 'basic_theme_setup' );
 
 function add_scripts_and_styles() {
 
