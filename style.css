@@ -98,7 +98,7 @@ a:visited {
 
 /* line 29, sass/_basics.scss */
 h1 {
-  font-size: 32px;
+  font-size: 40px;
   padding-bottom: 1em;
   color: #1b1f2a;
   font-weight: bold;
@@ -134,76 +134,105 @@ li {
 }
 
 /* line 16, sass/style.scss */
-#page {
+body {
   background-color: #efefef;
+}
+
+/* line 20, sass/style.scss */
+#page {
   width: 80%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* line 22, sass/style.scss */
+/* line 26, sass/style.scss */
 header {
   background-color: #c4b6cf;
   margin-bottom: 15px;
 }
-/* line 26, sass/style.scss */
+/* line 30, sass/style.scss */
 header .site-header {
-  padding: 15px;
+  padding: 15px 35px;
+  font-size: 40px;
+}
+/* line 33, sass/style.scss */
+header .site-header a {
   text-decoration: none;
 }
-/* line 31, sass/style.scss */
+/* line 36, sass/style.scss */
+header .site-header a:hover {
+  text-decoration: underline;
+}
+/* line 41, sass/style.scss */
 header ul {
   overflow: hidden;
   padding: 0;
-  border: 2px solid #434d68;
-  background-color: #fff;
+  background-color: #efefef;
 }
-/* line 37, sass/style.scss */
+/* line 46, sass/style.scss */
 header li {
   float: left;
   list-style-type: none;
-  width: 150px;
+  width: 145px;
+  font-size: 20px;
   padding: 7.5px;
-  border-right: 2px solid #434d68;
+  text-align: center;
 }
-
-/* line 46, sass/style.scss */
-#content {
-  width: 79%;
-  float: left;
+/* line 53, sass/style.scss */
+header li a, header li a:visited {
+  color: #fff;
+  text-decoration: none;
 }
-
-/* line 51, sass/style.scss */
-#sidebar {
-  width: 21%;
-  float: left;
+/* line 57, sass/style.scss */
+header li a:hover {
+  text-decoration: underline;
 }
-
-/* line 56, sass/style.scss */
-article {
-  width: 90%;
-  margin: 0 5% 5%;
-}
-
 /* line 61, sass/style.scss */
+header li:nth-child(3n+1) {
+  background-color: #c4b6cf;
+}
+/* line 64, sass/style.scss */
+header li:nth-child(3n+2) {
+  background-color: #434d68;
+}
+/* line 67, sass/style.scss */
+header li:nth-child(3n+3) {
+  background-color: #ef9c43;
+}
+
+/* line 72, sass/style.scss */
+article {
+  background-color: #fff;
+  width: 90%;
+  padding: 30px 5% 5%;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px 2px #ccd1de;
+}
+
+/* line 80, sass/style.scss */
 .alignleft {
   float: left;
   padding-right: 15px;
 }
 
-/* line 66, sass/style.scss */
+/* line 85, sass/style.scss */
 .alignright {
   float: right;
   padding-left: 15px;
 }
 
-@media all and (max-width: 568px) {
-  /* line 72, sass/style.scss */
-  #content {
-    width: 100%;
-  }
+/* line 90, sass/style.scss */
+footer {
+  background-color: #c4b6cf;
+  margin-bottom: 20px;
+  padding: 15px 5%;
+  font-size: 20px;
+  color: #fff;
+}
 
-  /* line 76, sass/style.scss */
-  #sidebar {
-    display: none;
+@media all and (max-width: 568px) {
+  /* line 100, sass/style.scss */
+  header li {
+    width: 100%;
   }
 }
