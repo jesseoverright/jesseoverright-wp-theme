@@ -148,59 +148,80 @@ body {
 /* line 26, sass/style.scss */
 header {
   background-color: #c4b6cf;
-  margin-bottom: 15px;
 }
-/* line 30, sass/style.scss */
+/* line 29, sass/style.scss */
 header .site-header {
   padding: 15px 35px;
   font-size: 40px;
 }
-/* line 33, sass/style.scss */
+/* line 32, sass/style.scss */
 header .site-header a {
   text-decoration: none;
 }
-/* line 36, sass/style.scss */
+/* line 35, sass/style.scss */
 header .site-header a:hover {
   text-decoration: underline;
 }
 /* line 41, sass/style.scss */
-header ul {
+header .social-icons {
+  float: right;
+  background: transparent;
+  margin-top: -80px;
+}
+/* line 47, sass/style.scss */
+header .social-icons li {
+  float: left;
+  background-color: transparent;
+  list-style-type: none;
+  margin-right: 15px;
+}
+/* line 52, sass/style.scss */
+header .social-icons li img {
+  width: 60px;
+}
+
+/* line 58, sass/style.scss */
+.navigation {
+  margin-bottom: 15px;
+}
+/* line 61, sass/style.scss */
+.navigation ul {
   overflow: hidden;
   padding: 0;
   background-color: #efefef;
 }
-/* line 46, sass/style.scss */
-header li {
+/* line 66, sass/style.scss */
+.navigation li {
   float: left;
-  list-style-type: none;
   width: 145px;
   font-size: 20px;
   padding: 7.5px;
   text-align: center;
+  list-style-type: none;
 }
-/* line 53, sass/style.scss */
-header li a, header li a:visited {
+/* line 73, sass/style.scss */
+.navigation li a, .navigation li a:visited {
   color: #fff;
   text-decoration: none;
 }
-/* line 57, sass/style.scss */
-header li a:hover {
+/* line 77, sass/style.scss */
+.navigation li a:hover {
   text-decoration: underline;
 }
-/* line 61, sass/style.scss */
-header li:nth-child(3n+1) {
+/* line 81, sass/style.scss */
+.navigation li:nth-child(3n+1) {
   background-color: #c4b6cf;
 }
-/* line 64, sass/style.scss */
-header li:nth-child(3n+2) {
+/* line 84, sass/style.scss */
+.navigation li:nth-child(3n+2) {
   background-color: #434d68;
 }
-/* line 67, sass/style.scss */
-header li:nth-child(3n+3) {
+/* line 87, sass/style.scss */
+.navigation li:nth-child(3n+3) {
   background-color: #ef9c43;
 }
 
-/* line 72, sass/style.scss */
+/* line 92, sass/style.scss */
 article {
   background-color: #fff;
   width: 90%;
@@ -209,19 +230,19 @@ article {
   box-shadow: 3px 3px 2px #ccd1de;
 }
 
-/* line 80, sass/style.scss */
+/* line 100, sass/style.scss */
 .alignleft {
   float: left;
   padding-right: 15px;
 }
 
-/* line 85, sass/style.scss */
+/* line 105, sass/style.scss */
 .alignright {
   float: right;
   padding-left: 15px;
 }
 
-/* line 90, sass/style.scss */
+/* line 110, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin-bottom: 20px;
@@ -231,13 +252,18 @@ footer {
 }
 
 @media all and (max-width: 568px) {
-  /* line 100, sass/style.scss */
+  /* line 120, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 104, sass/style.scss */
-  header li {
+  /* line 124, sass/style.scss */
+  header .social-icons {
+    display: none;
+  }
+
+  /* line 130, sass/style.scss */
+  .navigation li {
     width: 100%;
   }
 }
