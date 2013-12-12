@@ -1,12 +1,13 @@
-/* Theme Name: Jesse Overright
- * Theme URI: http://jesseoverright.com/
- * Author: Jesse Overright
- * Author URI: http://jesseoverright.com/
- * Description: This is a custom theme build for jesseoverright.com.  It's a portfolio style theme that adds a new custom content type, portfolio item.
- * Version: 0 (beta)
- * License: GNU General Public License v2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Tags: portfolio */
+/*
+  Theme Name: Jesse Overright
+  Theme URI: http://jesseoverright.com/
+  Author: Jesse Overright
+  Author URI: http://jesseoverright.com/
+  Description: This is a custom theme build for jesseoverright.com.  It's a portfolio style theme that adds a new custom content type, portfolio item.
+  Version: 0 (beta)
+  License: GNU General Public License v2 or later
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Tags: portfolio */
 /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -70,4 +71,26 @@ a img {
 /* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
+}
+
+/* line 18, sass/style.scss */
+#page {
+  background-color: #efefef;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* line 24, sass/style.scss */
+h1 {
+  font-size: 32px;
+}
+
+/* line 28, sass/style.scss */
+h2 {
+  font-size: 24px;
+}
+
+/* line 32, sass/style.scss */
+h3 {
+  font-size: 20px;
 }
