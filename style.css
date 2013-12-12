@@ -10,7 +10,7 @@
   Tags: portfolio */
 /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, p, h1, h2, h3, h4, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -73,6 +73,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* line 4, sass/_basics.scss */
+p, h1, h2, h3, h4 {
+  padding-bottom: 0.75em;
+  font-weight: 16px;
+}
+
+/* line 9, sass/_basics.scss */
+h1 {
+  font-size: 32px;
+  padding-bottom: 1em;
+}
+
+/* line 15, sass/_basics.scss */
+h2 {
+  font-size: 24px;
+}
+
+/* line 20, sass/_basics.scss */
+h3 {
+  font-size: 20px;
+}
+
+/* line 25, sass/_basics.scss */
+h4 {
+  font-weight: bold;
+}
+
 /* line 18, sass/style.scss */
 #page {
   background-color: #efefef;
@@ -81,16 +108,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 24, sass/style.scss */
-h1 {
-  font-size: 32px;
-}
-
-/* line 28, sass/style.scss */
-h2 {
-  font-size: 24px;
-}
-
-/* line 32, sass/style.scss */
-h3 {
-  font-size: 20px;
+article {
+  width: 90%;
+  margin: 5%;
 }
