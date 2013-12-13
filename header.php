@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" lang="en" />
-    <title><?php bloginfo('name'); ?><?php wp_title( '|', true, 'right' ); ?></title>
+    <title><?php wp_title( '/', true, 'right' ); bloginfo('name'); ?></title>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
     <?php wp_head(); ?>
