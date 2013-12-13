@@ -1,27 +1,34 @@
 @import url("http://fonts.googleapis.com/css?family=Karla");
-/* line 11, sass/_basics.scss */
+/* line 11, sass/_typography.scss */
 body {
   font-family: Karla, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.25em;
 }
 
-/* line 15, sass/_basics.scss */
+/* line 16, sass/_typography.scss */
 p, h1, h2, h3, h4, li {
   padding-bottom: 0.75em;
   font-size: 16px;
   line-height: 1.25em;
 }
 
-/* line 21, sass/_basics.scss */
+/* line 22, sass/_typography.scss */
 a {
   color: #d47612;
+  text-decoration: none;
 }
 
-/* line 25, sass/_basics.scss */
+/* line 27, sass/_typography.scss */
 a:visited {
   color: #434d68;
 }
 
-/* line 29, sass/_basics.scss */
+/* line 31, sass/_typography.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 35, sass/_typography.scss */
 h1 {
   font-size: 40px;
   padding-bottom: 1em;
@@ -29,33 +36,51 @@ h1 {
   font-weight: bold;
 }
 
-/* line 37, sass/_basics.scss */
+/* line 43, sass/_typography.scss */
 h2 {
   color: #1b1f2a;
   font-size: 24px;
   font-weight: bold;
 }
 
-/* line 44, sass/_basics.scss */
+/* line 50, sass/_typography.scss */
 h3 {
   color: #795e8e;
   font-size: 20px;
 }
 
-/* line 50, sass/_basics.scss */
+/* line 56, sass/_typography.scss */
 h4 {
   font-weight: bold;
 }
 
-/* line 55, sass/_basics.scss */
+/* line 61, sass/_typography.scss */
 ul {
   padding: 15px;
 }
 
-/* line 59, sass/_basics.scss */
+/* line 65, sass/_typography.scss */
 li {
   list-style-type: square;
   list-style-position: inside;
+}
+
+/* line 71, sass/_typography.scss */
+blockquote {
+  margin-left: 15px;
+}
+/* line 74, sass/_typography.scss */
+blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote li {
+  font-size: 28px;
+  font-style: italic;
+}
+/* line 79, sass/_typography.scss */
+blockquote p:before, blockquote h1:before, blockquote h2:before, blockquote h3:before, blockquote h4:before, blockquote li:before {
+  content: '“';
+}
+/* line 82, sass/_typography.scss */
+blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:after, blockquote h4:after, blockquote li:after {
+  content: '”';
 }
 
 /* line 3, sass/editor-style.scss */

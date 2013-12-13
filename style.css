@@ -74,29 +74,36 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 11, sass/_basics.scss */
+/* line 11, sass/_typography.scss */
 body {
   font-family: Karla, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.25em;
 }
 
-/* line 15, sass/_basics.scss */
+/* line 16, sass/_typography.scss */
 p, h1, h2, h3, h4, li {
   padding-bottom: 0.75em;
   font-size: 16px;
   line-height: 1.25em;
 }
 
-/* line 21, sass/_basics.scss */
+/* line 22, sass/_typography.scss */
 a {
   color: #d47612;
+  text-decoration: none;
 }
 
-/* line 25, sass/_basics.scss */
+/* line 27, sass/_typography.scss */
 a:visited {
   color: #434d68;
 }
 
-/* line 29, sass/_basics.scss */
+/* line 31, sass/_typography.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 35, sass/_typography.scss */
 h1 {
   font-size: 40px;
   padding-bottom: 1em;
@@ -104,72 +111,86 @@ h1 {
   font-weight: bold;
 }
 
-/* line 37, sass/_basics.scss */
+/* line 43, sass/_typography.scss */
 h2 {
   color: #1b1f2a;
   font-size: 24px;
   font-weight: bold;
 }
 
-/* line 44, sass/_basics.scss */
+/* line 50, sass/_typography.scss */
 h3 {
   color: #795e8e;
   font-size: 20px;
 }
 
-/* line 50, sass/_basics.scss */
+/* line 56, sass/_typography.scss */
 h4 {
   font-weight: bold;
 }
 
-/* line 55, sass/_basics.scss */
+/* line 61, sass/_typography.scss */
 ul {
   padding: 15px;
 }
 
-/* line 59, sass/_basics.scss */
+/* line 65, sass/_typography.scss */
 li {
   list-style-type: square;
   list-style-position: inside;
 }
 
-/* line 16, sass/style.scss */
-body {
-  background-color: #efefef;
+/* line 71, sass/_typography.scss */
+blockquote {
+  margin-left: 15px;
+}
+/* line 74, sass/_typography.scss */
+blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote li {
+  font-size: 28px;
+  font-style: italic;
+}
+/* line 79, sass/_typography.scss */
+blockquote p:before, blockquote h1:before, blockquote h2:before, blockquote h3:before, blockquote h4:before, blockquote li:before {
+  content: '“';
+}
+/* line 82, sass/_typography.scss */
+blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:after, blockquote h4:after, blockquote li:after {
+  content: '”';
 }
 
 /* line 20, sass/style.scss */
+body {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(60%, #ededed), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(#eeeeee, #ededed 60%, #dddddd);
+  background-image: -moz-linear-gradient(#eeeeee, #ededed 60%, #dddddd);
+  background-image: -o-linear-gradient(#eeeeee, #ededed 60%, #dddddd);
+  background-image: linear-gradient(#eeeeee, #ededed 60%, #dddddd);
+}
+
+/* line 24, sass/style.scss */
 #page {
   width: 90%;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* line 26, sass/style.scss */
+/* line 30, sass/style.scss */
 header {
   background-color: #c4b6cf;
 }
-/* line 29, sass/style.scss */
+/* line 33, sass/style.scss */
 header .site-header {
   padding: 15px 35px;
   font-size: 40px;
 }
-/* line 32, sass/style.scss */
-header .site-header a {
-  text-decoration: none;
-}
-/* line 35, sass/style.scss */
-header .site-header a:hover {
-  text-decoration: underline;
-}
-/* line 41, sass/style.scss */
+/* line 38, sass/style.scss */
 header .social-icons {
   float: right;
   background: transparent;
   padding-bottom: 5px;
   padding-right: 35px;
 }
-/* line 48, sass/style.scss */
+/* line 45, sass/style.scss */
 header .social-icons li {
   float: left;
   background-color: transparent;
@@ -177,22 +198,21 @@ header .social-icons li {
   margin-right: 15px;
   padding-bottom: 0;
 }
-/* line 54, sass/style.scss */
+/* line 51, sass/style.scss */
 header .social-icons li img {
   width: 55px;
 }
 
-/* line 60, sass/style.scss */
+/* line 57, sass/style.scss */
 .navigation {
   margin-bottom: 15px;
 }
-/* line 63, sass/style.scss */
+/* line 60, sass/style.scss */
 .navigation ul {
   overflow: hidden;
   padding: 0;
-  background-color: #efefef;
 }
-/* line 68, sass/style.scss */
+/* line 65, sass/style.scss */
 .navigation li {
   float: left;
   width: 145px;
@@ -201,29 +221,48 @@ header .social-icons li img {
   text-align: center;
   list-style-type: none;
 }
-/* line 75, sass/style.scss */
+/* line 72, sass/style.scss */
 .navigation li a, .navigation li a:visited {
   color: #fff;
   text-decoration: none;
 }
-/* line 79, sass/style.scss */
+/* line 76, sass/style.scss */
 .navigation li a:hover {
   text-decoration: underline;
 }
-/* line 83, sass/style.scss */
+/* line 80, sass/style.scss */
 .navigation li:nth-child(3n+1) {
   background-color: #c4b6cf;
 }
-/* line 86, sass/style.scss */
+/* line 83, sass/style.scss */
 .navigation li:nth-child(3n+2) {
   background-color: #434d68;
 }
-/* line 89, sass/style.scss */
+/* line 86, sass/style.scss */
 .navigation li:nth-child(3n+3) {
   background-color: #ef9c43;
 }
 
-/* line 94, sass/style.scss */
+/* line 91, sass/style.scss */
+.mini-nav {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-top: 8px solid #c4b6cf;
+  width: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999999), color-stop(40%, transparent));
+  background-image: -webkit-linear-gradient(#999999, transparent 40%);
+  background-image: -moz-linear-gradient(#999999, transparent 40%);
+  background-image: -o-linear-gradient(#999999, transparent 40%);
+  background-image: linear-gradient(#999999, transparent 40%);
+}
+
+/* line 100, sass/style.scss */
+body.admin-bar .mini-nav {
+  top: 32px;
+}
+
+/* line 104, sass/style.scss */
 article {
   background-color: #fff;
   width: 90%;
@@ -232,19 +271,19 @@ article {
   box-shadow: 3px 3px 2px #ccd1de;
 }
 
-/* line 102, sass/style.scss */
+/* line 112, sass/style.scss */
 .alignleft {
   float: left;
   padding-right: 15px;
 }
 
-/* line 107, sass/style.scss */
+/* line 117, sass/style.scss */
 .alignright {
   float: right;
   padding-left: 15px;
 }
 
-/* line 112, sass/style.scss */
+/* line 122, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin-bottom: 20px;
@@ -254,24 +293,35 @@ footer {
 }
 
 @media all and (max-width: 870px) {
-  /* line 123, sass/style.scss */
+  /* line 133, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 }
-@media all and (max-width: 568px) {
-  /* line 132, sass/style.scss */
+@media all and (max-width: 600px) {
+  /* line 142, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 136, sass/style.scss */
+  /* line 146, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 142, sass/style.scss */
+  /* line 152, sass/style.scss */
   .navigation li {
     width: 100%;
+  }
+
+  /* line 158, sass/style.scss */
+  .mini-nav li {
+    width: 100px;
+    font-size: 16px;
+  }
+
+  /* line 164, sass/style.scss */
+  body.admin-bar .mini-nav {
+    top: 0;
   }
 }
