@@ -166,31 +166,33 @@ header .site-header a:hover {
 header .social-icons {
   float: right;
   background: transparent;
-  margin-top: -80px;
+  padding-bottom: 5px;
+  padding-right: 35px;
 }
-/* line 47, sass/style.scss */
+/* line 48, sass/style.scss */
 header .social-icons li {
   float: left;
   background-color: transparent;
   list-style-type: none;
   margin-right: 15px;
+  padding-bottom: 0;
 }
-/* line 52, sass/style.scss */
+/* line 54, sass/style.scss */
 header .social-icons li img {
-  width: 60px;
+  width: 55px;
 }
 
-/* line 58, sass/style.scss */
+/* line 60, sass/style.scss */
 .navigation {
   margin-bottom: 15px;
 }
-/* line 61, sass/style.scss */
+/* line 63, sass/style.scss */
 .navigation ul {
   overflow: hidden;
   padding: 0;
   background-color: #efefef;
 }
-/* line 66, sass/style.scss */
+/* line 68, sass/style.scss */
 .navigation li {
   float: left;
   width: 145px;
@@ -199,29 +201,29 @@ header .social-icons li img {
   text-align: center;
   list-style-type: none;
 }
-/* line 73, sass/style.scss */
+/* line 75, sass/style.scss */
 .navigation li a, .navigation li a:visited {
   color: #fff;
   text-decoration: none;
 }
-/* line 77, sass/style.scss */
+/* line 79, sass/style.scss */
 .navigation li a:hover {
   text-decoration: underline;
 }
-/* line 81, sass/style.scss */
+/* line 83, sass/style.scss */
 .navigation li:nth-child(3n+1) {
   background-color: #c4b6cf;
 }
-/* line 84, sass/style.scss */
+/* line 86, sass/style.scss */
 .navigation li:nth-child(3n+2) {
   background-color: #434d68;
 }
-/* line 87, sass/style.scss */
+/* line 89, sass/style.scss */
 .navigation li:nth-child(3n+3) {
   background-color: #ef9c43;
 }
 
-/* line 92, sass/style.scss */
+/* line 94, sass/style.scss */
 article {
   background-color: #fff;
   width: 90%;
@@ -230,19 +232,19 @@ article {
   box-shadow: 3px 3px 2px #ccd1de;
 }
 
-/* line 100, sass/style.scss */
+/* line 102, sass/style.scss */
 .alignleft {
   float: left;
   padding-right: 15px;
 }
 
-/* line 105, sass/style.scss */
+/* line 107, sass/style.scss */
 .alignright {
   float: right;
   padding-left: 15px;
 }
 
-/* line 110, sass/style.scss */
+/* line 112, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin-bottom: 20px;
@@ -251,18 +253,24 @@ footer {
   color: #fff;
 }
 
+@media all and (max-width: 870px) {
+  /* line 123, sass/style.scss */
+  header .social-icons li img {
+    width: 25px;
+  }
+}
 @media all and (max-width: 568px) {
-  /* line 120, sass/style.scss */
+  /* line 132, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 124, sass/style.scss */
+  /* line 136, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 130, sass/style.scss */
+  /* line 142, sass/style.scss */
   .navigation li {
     width: 100%;
   }
