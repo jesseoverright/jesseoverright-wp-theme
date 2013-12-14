@@ -215,7 +215,7 @@ header .social-icons li img {
   float: left;
   width: 145px;
   font-size: 20px;
-  padding: 7.5px;
+  padding: 0;
   text-align: center;
   list-style-type: none;
 }
@@ -223,25 +223,27 @@ header .social-icons li img {
 .navigation li a, .navigation li a:visited {
   color: #fff;
   text-decoration: none;
+  display: block;
+  padding: 7.5px;
 }
-/* line 88, sass/style.scss */
+/* line 90, sass/style.scss */
 .navigation li a:hover {
   text-decoration: underline;
 }
-/* line 92, sass/style.scss */
+/* line 94, sass/style.scss */
 .navigation li:nth-child(3n+1) {
   background-color: #c4b6cf;
 }
-/* line 95, sass/style.scss */
+/* line 97, sass/style.scss */
 .navigation li:nth-child(3n+2) {
   background-color: #434d68;
 }
-/* line 98, sass/style.scss */
+/* line 100, sass/style.scss */
 .navigation li:nth-child(3n+3) {
   background-color: #ef9c43;
 }
 
-/* line 103, sass/style.scss */
+/* line 105, sass/style.scss */
 .mini-nav {
   position: fixed;
   top: 0;
@@ -255,29 +257,44 @@ header .social-icons li img {
   background-image: linear-gradient(#999999, transparent 40%);
 }
 
-/* line 112, sass/style.scss */
+/* line 114, sass/style.scss */
 body.admin-bar .mini-nav {
   top: 32px;
 }
 
-/* line 116, sass/style.scss */
+/* line 118, sass/style.scss */
 #page {
   width: 90%;
   margin: 0 auto;
 }
 
-/* line 121, sass/style.scss */
+/* line 123, sass/style.scss */
 #content {
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* line 126, sass/style.scss */
+/* line 128, sass/style.scss */
+#portfolio-item-content {
+  margin: 0 auto;
+}
+/* line 131, sass/style.scss */
+#portfolio-item-content .portfolio-header-image {
+  width: 100%;
+  height: auto;
+}
+/* line 135, sass/style.scss */
+#portfolio-item-content article {
+  position: relative;
+  margin-top: -500px;
+}
+
+/* line 142, sass/style.scss */
 #portfolio {
   overflow: auto;
 }
 
-/* line 130, sass/style.scss */
+/* line 146, sass/style.scss */
 .portfolio-item {
   background-color: #fff;
   padding: 30px 5% 5%;
@@ -298,13 +315,15 @@ body.admin-bar .mini-nav {
   max-width: 100%;
 }
 
-/* line 139, sass/style.scss */
+/* line 155, sass/style.scss */
 article {
   background-color: #fff;
   padding: 30px 5% 5%;
   margin-bottom: 30px;
   box-shadow: 3px 3px 2px #ccd1de;
   width: 90%;
+  max-width: 800px;
+  margin: 0 auto 30px;
 }
 /* line 25, sass/style.scss */
 article img {
@@ -316,25 +335,25 @@ article iframe {
   max-width: 100%;
 }
 
-/* line 144, sass/style.scss */
+/* line 162, sass/style.scss */
 .alignleft {
   float: left;
   padding-right: 15px;
 }
 
-/* line 149, sass/style.scss */
+/* line 167, sass/style.scss */
 .alignright {
   float: right;
   padding-left: 15px;
 }
 
-/* line 154, sass/style.scss */
+/* line 172, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin: 0 auto 20px;
   max-width: 800px;
 }
-/* line 159, sass/style.scss */
+/* line 177, sass/style.scss */
 footer p, footer h1, footer h2, footer h3, footer h4, footer li {
   padding: 15px 5%;
   font-size: 20px;
@@ -342,39 +361,39 @@ footer p, footer h1, footer h2, footer h3, footer h4, footer li {
 }
 
 @media all and (max-width: 870px) {
-  /* line 173, sass/style.scss */
+  /* line 191, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 }
 @media all and (max-width: 600px) {
-  /* line 182, sass/style.scss */
+  /* line 200, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 186, sass/style.scss */
+  /* line 204, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 192, sass/style.scss */
+  /* line 210, sass/style.scss */
   .navigation li {
     width: 100%;
   }
 
-  /* line 198, sass/style.scss */
+  /* line 216, sass/style.scss */
   .mini-nav li {
     width: 100px;
     font-size: 16px;
   }
 
-  /* line 204, sass/style.scss */
+  /* line 222, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 208, sass/style.scss */
+  /* line 226, sass/style.scss */
   .portfolio-item {
     width: 90%;
     padding: 30px 5% 5%;

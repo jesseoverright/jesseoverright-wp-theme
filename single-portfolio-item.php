@@ -7,7 +7,7 @@
 
 <?php #get_sidebar(); ?>
 
-<div id="content" role="main">
+<div id="portfolio-item-content" role="main">
 
     <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'content', 'portfolio-item' ); ?>
