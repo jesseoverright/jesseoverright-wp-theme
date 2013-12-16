@@ -84,13 +84,14 @@ blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:afte
   content: '”';
 }
 
-/* line 3, sass/editor-style.scss */
-.alignleft {
+/* line 88, sass/_typography.scss */
+img.alignleft {
   float: left;
-  padding-right: 5px;
+  margin: 10px 15px 10px 0;
 }
 
-/* line 8, sass/editor-style.scss */
-.alignright {
+/* line 93, sass/_typography.scss */
+img.alignright {
   float: right;
+  margin: 10px 0 10px 15px;
 }

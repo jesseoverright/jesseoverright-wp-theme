@@ -12,6 +12,16 @@ function basic_theme_setup() {
     // add featured image support
     add_theme_support( 'post-thumbnails' );
 
+    // set standard image sizes
+    update_option('large_size_w', 800);
+    update_option('large_size_h', 506);
+    update_option('medium_size_w',380);
+    update_option('medium_size_h',380);
+    update_option('thumbnail_size_w',225);
+
+    // add portfolio tile size
+    add_image_size('portfolio-tile', 350, 250, true);
+
 }
 
 add_action( 'after_setup_theme', 'basic_theme_setup' );

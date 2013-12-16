@@ -159,12 +159,24 @@ blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:afte
   content: '”';
 }
 
-/* line 35, sass/style.scss */
+/* line 88, sass/_typography.scss */
+img.alignleft {
+  float: left;
+  margin: 10px 15px 10px 0;
+}
+
+/* line 93, sass/_typography.scss */
+img.alignright {
+  float: right;
+  margin: 10px 0 10px 15px;
+}
+
+/* line 37, sass/style.scss */
 html {
   min-height: 100%;
 }
 
-/* line 38, sass/style.scss */
+/* line 40, sass/style.scss */
 body {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(60%, #ededed), color-stop(100%, #dddddd));
   background-image: -webkit-linear-gradient(#eeeeee, #ededed 60%, #dddddd);
@@ -173,23 +185,23 @@ body {
   background-image: linear-gradient(#eeeeee, #ededed 60%, #dddddd);
 }
 
-/* line 42, sass/style.scss */
+/* line 44, sass/style.scss */
 header {
   background-color: #c4b6cf;
 }
-/* line 45, sass/style.scss */
+/* line 47, sass/style.scss */
 header .site-header {
   padding: 15px 35px;
   font-size: 40px;
 }
-/* line 50, sass/style.scss */
+/* line 52, sass/style.scss */
 header .social-icons {
   float: right;
   background: transparent;
   padding-bottom: 5px;
   padding-right: 35px;
 }
-/* line 57, sass/style.scss */
+/* line 59, sass/style.scss */
 header .social-icons li {
   float: left;
   background-color: transparent;
@@ -197,21 +209,21 @@ header .social-icons li {
   margin-right: 15px;
   padding-bottom: 0;
 }
-/* line 63, sass/style.scss */
+/* line 65, sass/style.scss */
 header .social-icons li img {
   width: 55px;
 }
 
-/* line 69, sass/style.scss */
+/* line 71, sass/style.scss */
 .navigation {
   margin-bottom: 15px;
 }
-/* line 72, sass/style.scss */
+/* line 74, sass/style.scss */
 .navigation ul {
   overflow: hidden;
   padding: 0;
 }
-/* line 77, sass/style.scss */
+/* line 79, sass/style.scss */
 .navigation li {
   float: left;
   width: 145px;
@@ -220,31 +232,31 @@ header .social-icons li img {
   text-align: center;
   list-style-type: none;
 }
-/* line 84, sass/style.scss */
+/* line 86, sass/style.scss */
 .navigation li a, .navigation li a:visited {
   color: #fff;
   text-decoration: none;
   display: block;
   padding: 7.5px;
 }
-/* line 90, sass/style.scss */
+/* line 92, sass/style.scss */
 .navigation li a:hover {
   text-decoration: underline;
 }
-/* line 94, sass/style.scss */
+/* line 96, sass/style.scss */
 .navigation li:nth-child(3n+1) {
   background-color: #c4b6cf;
 }
-/* line 97, sass/style.scss */
+/* line 99, sass/style.scss */
 .navigation li:nth-child(3n+2) {
   background-color: #434d68;
 }
-/* line 100, sass/style.scss */
+/* line 102, sass/style.scss */
 .navigation li:nth-child(3n+3) {
   background-color: #ef9c43;
 }
 
-/* line 105, sass/style.scss */
+/* line 107, sass/style.scss */
 .mini-nav {
   position: fixed;
   top: 0;
@@ -258,24 +270,23 @@ header .social-icons li img {
   background-image: linear-gradient(#999999, transparent 40%);
 }
 
-/* line 114, sass/style.scss */
+/* line 116, sass/style.scss */
 body.admin-bar .mini-nav {
   top: 32px;
 }
 
-/* line 118, sass/style.scss */
+/* line 120, sass/style.scss */
 #page {
-  width: 90%;
   margin: 0 auto;
 }
 
-/* line 123, sass/style.scss */
+/* line 124, sass/style.scss */
 #content {
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* line 128, sass/style.scss */
+/* line 129, sass/style.scss */
 #portfolio-item-content {
   margin: 0 auto;
   overflow: hidden;
@@ -283,76 +294,68 @@ body.admin-bar .mini-nav {
   background-position: top center;
   background-repeat: no-repeat;
 }
-/* line 135, sass/style.scss */
+/* line 136, sass/style.scss */
 #portfolio-item-content article {
   position: relative;
 }
 
-/* line 142, sass/style.scss */
+/* line 141, sass/style.scss */
 #portfolio {
   overflow: auto;
 }
 
-/* line 146, sass/style.scss */
+/* line 145, sass/style.scss */
 .portfolio-item {
   background-color: #fff;
   padding: 30px 5% 5%;
   margin-bottom: 30px;
   box-shadow: 3px 3px 2px #ccd1de;
+  overflow: hidden;
   padding: 2.5%;
   margin: 1.5%;
-  width: 24.5%;
+  width: 25.3333333%;
   float: left;
 }
-/* line 25, sass/style.scss */
+/* line 26, sass/style.scss */
 .portfolio-item img {
   max-width: 100%;
   height: auto;
+  box-shadow: 3px 3px 2px #f9dab9;
 }
-/* line 30, sass/style.scss */
+/* line 32, sass/style.scss */
 .portfolio-item iframe {
   max-width: 100%;
 }
 
-/* line 155, sass/style.scss */
+/* line 153, sass/style.scss */
 article {
   background-color: #fff;
   padding: 30px 5% 5%;
   margin-bottom: 30px;
   box-shadow: 3px 3px 2px #ccd1de;
+  overflow: hidden;
   width: 90%;
   max-width: 800px;
   margin: 0 auto 30px;
 }
-/* line 25, sass/style.scss */
+/* line 26, sass/style.scss */
 article img {
   max-width: 100%;
   height: auto;
+  box-shadow: 3px 3px 2px #f9dab9;
 }
-/* line 30, sass/style.scss */
+/* line 32, sass/style.scss */
 article iframe {
   max-width: 100%;
 }
 
-/* line 162, sass/style.scss */
-.alignleft {
-  float: left;
-  padding-right: 15px;
-}
-
-/* line 167, sass/style.scss */
-.alignright {
-  float: right;
-  padding-left: 15px;
-}
-
-/* line 172, sass/style.scss */
+/* line 160, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin: 0 auto 20px;
   max-width: 800px;
 }
-/* line 177, sass/style.scss */
+/* line 165, sass/style.scss */
 footer p, footer h1, footer h2, footer h3, footer h4, footer li {
   padding: 15px 5%;
   font-size: 20px;
@@ -360,39 +363,44 @@ footer p, footer h1, footer h2, footer h3, footer h4, footer li {
 }
 
 @media all and (max-width: 870px) {
-  /* line 191, sass/style.scss */
+  /* line 179, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 }
 @media all and (max-width: 600px) {
-  /* line 200, sass/style.scss */
+  /* line 188, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 204, sass/style.scss */
+  /* line 192, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 210, sass/style.scss */
+  /* line 198, sass/style.scss */
   .navigation li {
     width: 100%;
   }
 
-  /* line 216, sass/style.scss */
+  /* line 204, sass/style.scss */
   .mini-nav li {
     width: 100px;
     font-size: 16px;
   }
 
-  /* line 222, sass/style.scss */
+  /* line 210, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 226, sass/style.scss */
+  /* line 214, sass/style.scss */
+  #page {
+    max-width: 90%;
+  }
+
+  /* line 218, sass/style.scss */
   .portfolio-item {
     width: 90%;
     padding: 30px 5% 5%;

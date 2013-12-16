@@ -24,7 +24,7 @@
                 <div class="portfolio-item">
                 <?php 
                     echo '<a href="'.get_permalink($my_query->post->ID).'" title="'.wptexturize($my_query->post->post_title).'">';
-                    the_post_thumbnail();
+                    the_post_thumbnail('portfolio-tile');
                     echo '</a><br />';
                 ?>
                 <?php echo '<a href="'.get_permalink($my_query->post->ID).'" title="'.wptexturize($my_query->post->post_title).'">'.wptexturize($my_query->post->post_title).'</a>'; ?>
