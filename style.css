@@ -277,16 +277,14 @@ body.admin-bar .mini-nav {
 /* line 128, sass/style.scss */
 #portfolio-item-content {
   margin: 0 auto;
-}
-/* line 131, sass/style.scss */
-#portfolio-item-content .portfolio-header-image {
-  width: 100%;
-  height: auto;
+  overflow: hidden;
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 /* line 135, sass/style.scss */
 #portfolio-item-content article {
   position: relative;
-  margin-top: -500px;
 }
 
 /* line 142, sass/style.scss */

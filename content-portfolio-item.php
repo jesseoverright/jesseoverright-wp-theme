@@ -1,6 +1,6 @@
-<?php if ( has_post_thumbnail() ) : ?>
+<?php /*if ( has_post_thumbnail() ) : ?>
     <?php the_post_thumbnail('',array('class' => 'portfolio-header-image')); ?>
-<?php endif ?>
+<?php endif */ ?>
 
 <article>    
     <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
