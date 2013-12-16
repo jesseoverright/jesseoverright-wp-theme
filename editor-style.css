@@ -30,7 +30,7 @@ a:hover {
 
 /* line 35, sass/_typography.scss */
 h1 {
-  font-size: 40px;
+  font-size: 44px;
   padding-bottom: 1em;
   color: #1b1f2a;
   font-weight: bold;
@@ -39,46 +39,47 @@ h1 {
 /* line 43, sass/_typography.scss */
 h2 {
   color: #1b1f2a;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
 /* line 50, sass/_typography.scss */
 h3 {
   color: #795e8e;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 /* line 56, sass/_typography.scss */
 h4 {
   font-weight: bold;
+  font-size: 20px;
 }
 
-/* line 61, sass/_typography.scss */
+/* line 62, sass/_typography.scss */
 ul {
   padding: 15px;
 }
 
-/* line 65, sass/_typography.scss */
+/* line 66, sass/_typography.scss */
 li {
   list-style-type: square;
   list-style-position: inside;
 }
 
-/* line 71, sass/_typography.scss */
+/* line 72, sass/_typography.scss */
 blockquote {
   margin-left: 15px;
 }
-/* line 74, sass/_typography.scss */
+/* line 75, sass/_typography.scss */
 blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote li {
-  font-size: 28px;
+  font-size: 26.56px;
   font-style: italic;
 }
-/* line 79, sass/_typography.scss */
+/* line 80, sass/_typography.scss */
 blockquote p:before, blockquote h1:before, blockquote h2:before, blockquote h3:before, blockquote h4:before, blockquote li:before {
   content: '“';
 }
-/* line 82, sass/_typography.scss */
+/* line 83, sass/_typography.scss */
 blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:after, blockquote h4:after, blockquote li:after {
   content: '”';
 }
