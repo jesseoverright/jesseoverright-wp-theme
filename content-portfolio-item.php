@@ -1,4 +1,4 @@
-<article>    
+<article>
     <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
     <?php
         echo get_the_term_list($post->ID, 'key-features', '<ul class="key-features"><li>', '</li><li>', '</li></ul>');

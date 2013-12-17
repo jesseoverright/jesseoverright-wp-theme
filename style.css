@@ -222,41 +222,42 @@ header .social-icons li img {
 .navigation ul {
   overflow: hidden;
   padding: 0;
+  height: 40px;
 }
-/* line 84, sass/style.scss */
+/* line 85, sass/style.scss */
 .navigation li {
   float: left;
-  width: 145px;
+  min-width: 145px;
   font-size: 20px;
   padding: 0;
   text-align: center;
   list-style-type: none;
 }
-/* line 91, sass/style.scss */
+/* line 92, sass/style.scss */
 .navigation li a, .navigation li a:visited {
   color: #fff;
   text-decoration: none;
   display: block;
   padding: 7.5px;
 }
-/* line 97, sass/style.scss */
+/* line 98, sass/style.scss */
 .navigation li a:hover {
   text-decoration: underline;
 }
-/* line 101, sass/style.scss */
+/* line 102, sass/style.scss */
 .navigation li:nth-child(3n+1) {
   background-color: #c4b6cf;
 }
-/* line 104, sass/style.scss */
+/* line 105, sass/style.scss */
 .navigation li:nth-child(3n+2) {
   background-color: #434d68;
 }
-/* line 107, sass/style.scss */
+/* line 108, sass/style.scss */
 .navigation li:nth-child(3n+3) {
   background-color: #ef9c43;
 }
 
-/* line 112, sass/style.scss */
+/* line 113, sass/style.scss */
 .mini-nav {
   position: fixed;
   top: 0;
@@ -270,24 +271,24 @@ header .social-icons li img {
   background-image: linear-gradient(#999999, transparent 40%);
 }
 
-/* line 121, sass/style.scss */
+/* line 122, sass/style.scss */
 body.admin-bar .mini-nav {
   top: 32px;
 }
 
-/* line 125, sass/style.scss */
+/* line 126, sass/style.scss */
 #page {
   margin: 0 auto;
 }
 
-/* line 129, sass/style.scss */
+/* line 130, sass/style.scss */
 #content, #portfolio {
   max-width: 800px;
   width: 90%;
   margin: 0 auto;
 }
 
-/* line 135, sass/style.scss */
+/* line 136, sass/style.scss */
 #portfolio-item-content {
   margin: 0 auto;
   overflow: hidden;
@@ -295,18 +296,18 @@ body.admin-bar .mini-nav {
   background-position: top center;
   background-repeat: no-repeat;
 }
-/* line 142, sass/style.scss */
+/* line 143, sass/style.scss */
 #portfolio-item-content article {
   position: relative;
 }
 
-/* line 147, sass/style.scss */
+/* line 148, sass/style.scss */
 #portfolio {
   overflow: auto;
   max-width: none;
 }
 
-/* line 153, sass/style.scss */
+/* line 154, sass/style.scss */
 .portfolio-tile {
   background-color: #fff;
   padding: 30px 5% 5%;
@@ -337,17 +338,17 @@ body.admin-bar .mini-nav {
 .portfolio-tile iframe {
   max-width: 100%;
 }
-/* line 160, sass/style.scss */
+/* line 161, sass/style.scss */
 .portfolio-tile h3 {
   text-align: center;
   padding: 7.5px 0 0;
 }
-/* line 165, sass/style.scss */
+/* line 166, sass/style.scss */
 .portfolio-tile img {
   width: 100%;
 }
 
-/* line 170, sass/style.scss */
+/* line 171, sass/style.scss */
 article {
   background-color: #fff;
   padding: 30px 5% 5%;
@@ -377,11 +378,11 @@ article img {
 article iframe {
   max-width: 100%;
 }
-/* line 176, sass/style.scss */
+/* line 177, sass/style.scss */
 article .key-features {
   padding: 0 0 24.9px;
 }
-/* line 179, sass/style.scss */
+/* line 180, sass/style.scss */
 article .key-features li {
   list-style-type: none;
   display: inline-block;
@@ -392,18 +393,18 @@ article .key-features li {
   -moz-box-shadow: #333333 3px 2px 2px;
   box-shadow: #333333 3px 2px 2px;
 }
-/* line 187, sass/style.scss */
+/* line 188, sass/style.scss */
 article .key-features li a {
   color: #fff;
 }
 
-/* line 195, sass/style.scss */
+/* line 196, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin: 0 auto 20px;
   max-width: 800px;
 }
-/* line 200, sass/style.scss */
+/* line 201, sass/style.scss */
 footer p, footer h1, footer h2, footer h3, footer h4, footer li {
   padding: 15px 5%;
   font-size: 20px;
@@ -411,54 +412,63 @@ footer p, footer h1, footer h2, footer h3, footer h4, footer li {
 }
 
 @media all and (max-width: 870px) {
-  /* line 214, sass/style.scss */
+  /* line 215, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 
-  /* line 220, sass/style.scss */
+  /* line 221, sass/style.scss */
   .portfolio-tile {
     width: 42%;
   }
 }
 @media all and (max-width: 600px) {
-  /* line 227, sass/style.scss */
+  /* line 228, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 231, sass/style.scss */
+  /* line 232, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 237, sass/style.scss */
+  /* line 238, sass/style.scss */
   .navigation li {
     width: 100%;
   }
-
-  /* line 243, sass/style.scss */
-  .mini-nav li {
-    width: 100px;
-    font-size: 16px;
+  /* line 242, sass/style.scss */
+  .navigation ul {
+    height: auto;
   }
 
-  /* line 249, sass/style.scss */
+  /* line 248, sass/style.scss */
+  .mini-nav li {
+    width: auto;
+    min-width: 100px;
+    font-size: 16px;
+  }
+  /* line 254, sass/style.scss */
+  .mini-nav ul {
+    height: 35px;
+  }
+
+  /* line 259, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 253, sass/style.scss */
+  /* line 263, sass/style.scss */
   #page {
     max-width: 90%;
   }
 
-  /* line 257, sass/style.scss */
+  /* line 267, sass/style.scss */
   #portfolio-item-content article {
     margin-top: 0 !important;
   }
 
-  /* line 261, sass/style.scss */
+  /* line 271, sass/style.scss */
   .portfolio-tile {
     width: 90%;
     padding: 30px 5% 5%;
