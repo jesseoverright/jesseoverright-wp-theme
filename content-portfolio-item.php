@@ -3,8 +3,7 @@
     <?php
         echo get_the_term_list($post->ID, 'key-features', '<ul class="key-features"><li>', '</li><li>', '</li></ul>');
     ?>
-    <div>
     <h3 class="project-url"><a href="<?= get_post_meta($post->ID, 'project_url', true)?>"><?= get_post_meta($post->ID, 'project_url', true)?></a></h3>
     <?php the_content(); ?>
-    </div>
+    <h4><?= get_post_meta($post->ID, 'project_date', true) ?></h4>
 </article>

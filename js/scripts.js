@@ -11,20 +11,20 @@ jQuery(document).ready(function(){
         // if window has scrolled down menu far enough (excluding border that will be applied)
         if (jQuery(window).scrollTop() >= jQuery('.site-header').outerHeight()-8) {
             jQuery('.navigation').addClass('mini-nav');
-            
+
             // capture current size of navigation menu
             var old_nav_height = jQuery('.navigation').height();
-            
+
             // adjust page margin to compensate for the navigation change in the DOM, including margin
-            jQuery('#page').css('margin-top',old_nav_height+15); 
+            jQuery('#page').css('margin-top',old_nav_height+15);
         } else {
             // return navigation and page to original settings
             jQuery('.navigation').removeClass('mini-nav');
             jQuery('#page').css('margin-top','inherit');
         }
-        
+
         /**
-         * on portfolio pages add paralax effect to articles by reducing margin top to zero while 
+         * on portfolio pages add paralax effect to articles by reducing margin top to zero while
          * the top of the article div has not passed the browser window and the bottom of the article
          * is not visible in the browser window
          */
@@ -41,7 +41,7 @@ jQuery(document).ready(function(){
                 if (opacity >= 1) {
                     jQuery('#portfolio-item-content').css('background','none');
                 } else {
-                    jQuery('#portfolio-item-content').css({'background-image': 'linear-gradient(rgba(221,221,221,' + opacity + '),rgba(221,221,221,' + opacity + ')), '+ background_image, 'background-repeat':'no-repeat','background-size':'100% auto'});  
+                    jQuery('#portfolio-item-content').css({'background-image': 'linear-gradient(rgba(221,221,221,' + opacity + '),rgba(221,221,221,' + opacity + ')), '+ background_image, 'background-repeat':'no-repeat','background-size':'100% auto'});
                 }
             }
         }

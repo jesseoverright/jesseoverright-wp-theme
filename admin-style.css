@@ -1,0 +1,4 @@
+/* line 1, sass/admin-style.scss */
+#project-url input, #project-date input {
+  width: 100%;
+}

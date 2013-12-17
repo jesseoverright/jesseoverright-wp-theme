@@ -281,7 +281,7 @@ body.admin-bar .mini-nav {
 }
 
 /* line 129, sass/style.scss */
-#content {
+#content, #portfolio {
   max-width: 800px;
   width: 90%;
   margin: 0 auto;
@@ -303,9 +303,10 @@ body.admin-bar .mini-nav {
 /* line 147, sass/style.scss */
 #portfolio {
   overflow: auto;
+  max-width: none;
 }
 
-/* line 151, sass/style.scss */
+/* line 153, sass/style.scss */
 .portfolio-tile {
   background-color: #fff;
   padding: 30px 5% 5%;
@@ -336,17 +337,17 @@ body.admin-bar .mini-nav {
 .portfolio-tile iframe {
   max-width: 100%;
 }
-/* line 158, sass/style.scss */
+/* line 160, sass/style.scss */
 .portfolio-tile h3 {
   text-align: center;
   padding: 7.5px 0 0;
 }
-/* line 163, sass/style.scss */
+/* line 165, sass/style.scss */
 .portfolio-tile img {
   width: 100%;
 }
 
-/* line 168, sass/style.scss */
+/* line 170, sass/style.scss */
 article {
   background-color: #fff;
   padding: 30px 5% 5%;
@@ -376,11 +377,11 @@ article img {
 article iframe {
   max-width: 100%;
 }
-/* line 174, sass/style.scss */
+/* line 176, sass/style.scss */
 article .key-features {
   padding: 0 0 24.9px;
 }
-/* line 177, sass/style.scss */
+/* line 179, sass/style.scss */
 article .key-features li {
   list-style-type: none;
   display: inline-block;
@@ -391,18 +392,18 @@ article .key-features li {
   -moz-box-shadow: #333333 3px 2px 2px;
   box-shadow: #333333 3px 2px 2px;
 }
-/* line 185, sass/style.scss */
+/* line 187, sass/style.scss */
 article .key-features li a {
   color: #fff;
 }
 
-/* line 193, sass/style.scss */
+/* line 195, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin: 0 auto 20px;
   max-width: 800px;
 }
-/* line 198, sass/style.scss */
+/* line 200, sass/style.scss */
 footer p, footer h1, footer h2, footer h3, footer h4, footer li {
   padding: 15px 5%;
   font-size: 20px;
@@ -410,54 +411,54 @@ footer p, footer h1, footer h2, footer h3, footer h4, footer li {
 }
 
 @media all and (max-width: 870px) {
-  /* line 212, sass/style.scss */
+  /* line 214, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 
-  /* line 218, sass/style.scss */
+  /* line 220, sass/style.scss */
   .portfolio-tile {
     width: 42%;
   }
 }
 @media all and (max-width: 600px) {
-  /* line 225, sass/style.scss */
+  /* line 227, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 229, sass/style.scss */
+  /* line 231, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 235, sass/style.scss */
+  /* line 237, sass/style.scss */
   .navigation li {
     width: 100%;
   }
 
-  /* line 241, sass/style.scss */
+  /* line 243, sass/style.scss */
   .mini-nav li {
     width: 100px;
     font-size: 16px;
   }
 
-  /* line 247, sass/style.scss */
+  /* line 249, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 251, sass/style.scss */
+  /* line 253, sass/style.scss */
   #page {
     max-width: 90%;
   }
 
-  /* line 255, sass/style.scss */
+  /* line 257, sass/style.scss */
   #portfolio-item-content article {
     margin-top: 0 !important;
   }
 
-  /* line 259, sass/style.scss */
+  /* line 261, sass/style.scss */
   .portfolio-tile {
     width: 90%;
     padding: 30px 5% 5%;

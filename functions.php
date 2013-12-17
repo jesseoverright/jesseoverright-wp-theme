@@ -1,5 +1,5 @@
 <?php
-/** functions.php file 
+/** functions.php file
     this contains global functions for the jesseoverright theme, including
     the Portfolio custom content type
 */
@@ -37,13 +37,19 @@ function add_scripts_and_styles() {
 
 add_action( 'wp_enqueue_scripts', 'add_scripts_and_styles' );
 
+function add_custom_admin_css() {
+    wp_enqueue_style( 'joverright-admin-style', get_template_directory_uri() . '/admin-style.css');
+}
+
+add_action( 'admin_enqueue_scripts', 'add_custom_admin_css' );
+
 /**
  * Portfolio Content Type
  * custom content type to define portfolio items and specific details related to them.
  * uses custom taxonomy, featured images, and custom backend displays.
  */
 class Portfolio_Content_Type {
-    var $nonce_action = 'portfolio-project-url';
+    var $nonce_action = 'portfolio-item';
 
     function __construct() {
         register_post_type('portfolio-item', array(
@@ -68,32 +74,45 @@ class Portfolio_Content_Type {
             'supports' => array('title', 'editor', 'revisions', 'thumbnail'),
             'rewrite' => array('with_front' => false, 'slug' => 'portfolio')
         ));
-    
+
         add_action('admin_init', array(&$this, 'admin_init'));
         add_action('save_post', array(&$this, 'save_portfolio'));
     }
 
     function admin_init() {
-        add_meta_box('project-url', "Project URL", array(&$this, 'project_url_metabox'), 'portfolio-item','normal','high');
+        add_meta_box('project-url', 'Project URL', array(&$this, 'project_url_metabox'), 'portfolio-item','normal','high');
+        add_meta_box('project-date', 'Project Date', array(&$this, 'project_date_metabox'), 'portfolio-item', 'normal', 'high');
     }
 
     function save_portfolio( $post_id ) {
-        if ( !wp_verify_nonce( $_POST['project_url_noncename'], $this->nonce_action) ) {
+        if ( !wp_verify_nonce( $_POST['portfolio_item_noncename'], $this->nonce_action) ) {
             return false;
         }
         if ( !current_user_can( 'edit_post', $post_id )) {
             return false;
         }
 
+        // save, update or delete project url based on input
         $project_url = $_POST['project_url'];
         $current_url = get_post_meta($post_id, 'project_url');
 
         if ( $current_url == "")
             add_post_meta($post_id, 'project_url', $project_url, true);
-        elseif ( $project_url != $current_url ) 
+        elseif ( $project_url != $current_url )
             update_post_meta($post_id, 'project_url', $project_url);
         elseif ( $project_url == "" )
-            delete_post_meta( $post_id, 'project_url', $current_url); 
+            delete_post_meta( $post_id, 'project_url', $current_url);
+
+        // save, update or delete project date based on input
+        $project_date = $_POST['project_date'];
+        $current_date = get_post_meta($post_id, 'project_date');
+
+        if ( $current_date == "")
+            add_post_meta($post_id, 'project_date', $project_date, true);
+        elseif ( $project_date != $current_date )
+            update_post_meta($post_id, 'project_date', $project_date);
+        elseif ( $project_date == "" )
+            delete_post_meta( $post_id, 'project_date', $current_date);
     }
 
     function project_url_metabox() {
@@ -101,8 +120,17 @@ class Portfolio_Content_Type {
 
         $project_url = get_post_meta($post->ID, 'project_url', true);
         ?>
-        <input type="hidden" name="project_url_noncename" value="<?= wp_create_nonce($this->nonce_action) ?>" />
-        <input type="text" name="project_url" value="<?= $project_url ?>" style="width:100%" />
+        <input type="hidden" name="portfolio_item_noncename" value="<?= wp_create_nonce($this->nonce_action) ?>" />
+        <input type="text" name="project_url" value="<?= $project_url ?>" />
+        <?php
+    }
+
+    function project_date_metabox() {
+        global $post;
+
+        $project_date = get_post_meta($post->ID, 'project_date', true);
+        ?>
+        <input type="text" name="project_date" value="<?= $project_date ?>" />
         <?php
     }
 }
@@ -115,7 +143,7 @@ function init_portfolio_content_type() {
 add_action( 'init', 'init_portfolio_content_type');
 
 // Key Features Taxonomy
-function create_key_features_taxonomy() 
+function create_key_features_taxonomy()
 {
   $labels = array(
     'name' => _x( 'Key Features', 'taxonomy general name' ),
@@ -125,7 +153,7 @@ function create_key_features_taxonomy()
     'all_items' => __( 'All Features' ),
     'parent_item' => null,
     'parent_item_colon' => null,
-    'edit_item' => __( 'Edit Feature' ), 
+    'edit_item' => __( 'Edit Feature' ),
     'update_item' => __( 'Update Feature' ),
     'add_new_item' => __( 'Add New Feature' ),
     'new_item_name' => __( 'New Feature Name' ),
@@ -133,7 +161,7 @@ function create_key_features_taxonomy()
     'add_or_remove_items' => __( 'Add or remove features' ),
     'choose_from_most_used' => __( 'Choose from the most used Features' ),
     'menu_name' => __( 'Key Features' ),
-  ); 
+  );
 
   register_taxonomy('key-features','portfolio-item',array(
     'hierarchical' => false,

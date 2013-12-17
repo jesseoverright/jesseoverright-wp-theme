@@ -1,4 +1,4 @@
 jesseoverright-wp-theme
 =======================
 
-Custom WordPress theme for jesseoverright.com
+This is a custom WordPress theme developed for [jesseoverright.com](http://jesseoverright.com).
