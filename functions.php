@@ -43,6 +43,8 @@ add_action( 'wp_enqueue_scripts', 'add_scripts_and_styles' );
  * uses custom taxonomy, featured images, and custom backend displays.
  */
 class Portfolio_Content_Type {
+    var $nonce_action = 'portfolio-project-url';
+
     function __construct() {
         register_post_type('portfolio-item', array(
             'labels' => array(
@@ -66,6 +68,42 @@ class Portfolio_Content_Type {
             'supports' => array('title', 'editor', 'revisions', 'thumbnail'),
             'rewrite' => array('with_front' => false, 'slug' => 'portfolio')
         ));
+    
+        add_action('admin_init', array(&$this, 'admin_init'));
+        add_action('save_post', array(&$this, 'save_portfolio'));
+    }
+
+    function admin_init() {
+        add_meta_box('project-url', "Project URL", array(&$this, 'project_url_metabox'), 'portfolio-item','normal','high');
+    }
+
+    function save_portfolio( $post_id ) {
+        if ( !wp_verify_nonce( $_POST['project_url_noncename'], $this->nonce_action) ) {
+            return false;
+        }
+        if ( !current_user_can( 'edit_post', $post_id )) {
+            return false;
+        }
+
+        $project_url = $_POST['project_url'];
+        $current_url = get_post_meta($post_id, 'project_url');
+
+        if ( $current_url == "")
+            add_post_meta($post_id, 'project_url', $project_url, true);
+        elseif ( $project_url != $current_url ) 
+            update_post_meta($post_id, 'project_url', $project_url);
+        elseif ( $project_url == "" )
+            delete_post_meta( $post_id, 'project_url', $current_url); 
+    }
+
+    function project_url_metabox() {
+        global $post;
+
+        $project_url = get_post_meta($post->ID, 'project_url', true);
+        ?>
+        <input type="hidden" name="project_url_noncename" value="<?= wp_create_nonce($this->nonce_action) ?>" />
+        <input type="text" name="project_url" value="<?= $project_url ?>" style="width:100%" />
+        <?php
     }
 }
 

@@ -31,7 +31,7 @@ a:hover {
 /* line 35, sass/_typography.scss */
 h1 {
   font-size: 44px;
-  padding-bottom: 1em;
+  padding-bottom: 0.15em;
   color: #1b1f2a;
   font-weight: bold;
 }

@@ -1,5 +1,7 @@
 <?php
-/** default template file
+/** single portfolio item template file
+
+    renders the portfolio page with a large feature of the post thumbnail as the background
 
     by Jesse Overright
 */?>

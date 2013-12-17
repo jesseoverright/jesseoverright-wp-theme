@@ -1,5 +1,7 @@
 <?php
-/** default template file
+/** portfolio page template file
+
+    displays portfolio items in a grid layout
 
     by Jesse Overright
 */?>
@@ -21,14 +23,7 @@
     <?php if( $my_query->have_posts() ) : ?>
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
             <?php if (has_post_thumbnail() ) : ?>
-                <div class="portfolio-item">
-                <?php 
-                    echo '<a href="'.get_permalink($my_query->post->ID).'" title="'.wptexturize($my_query->post->post_title).'">';
-                    the_post_thumbnail('portfolio-tile');
-                    echo '</a><br />';
-                ?>
-                <?php echo '<a href="'.get_permalink($my_query->post->ID).'" title="'.wptexturize($my_query->post->post_title).'">'.wptexturize($my_query->post->post_title).'</a>'; ?>
-                </div>
+                <?php get_template_part( 'content', 'portfolio-tile' ); ?>
             <?php endif ?>    
         <?php endwhile; ?>
     <?php endif; ?>
