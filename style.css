@@ -385,15 +385,15 @@ article .post-meta {
 /* line 181, sass/style.scss */
 article .key-features, article .categories, article .tags {
   padding: 0 0 15px;
+  clear: both;
 }
-/* line 184, sass/style.scss */
+/* line 185, sass/style.scss */
 article .key-features li, article .categories li, article .tags li {
   list-style-type: none;
   display: inline-block;
   background-color: #9f88b1;
   padding: 5px 7.5px;
   margin: 0 10px 7.5px 0;
-  clear: both;
   -webkit-box-shadow: #666666 3px 2px 2px;
   -moz-box-shadow: #666666 3px 2px 2px;
   box-shadow: #666666 3px 2px 2px;
