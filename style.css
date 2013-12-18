@@ -392,7 +392,7 @@ article .key-features li, article .categories li, article .tags li {
   display: inline-block;
   background-color: #9f88b1;
   padding: 5px 7.5px;
-  margin: 0 5px 7.5px;
+  margin: 0 10px 7.5px 0;
   -webkit-box-shadow: #666666 3px 2px 2px;
   -moz-box-shadow: #666666 3px 2px 2px;
   box-shadow: #666666 3px 2px 2px;
@@ -405,21 +405,20 @@ article .key-features li a, article .categories li a, article .tags li a {
 article .key-features .header, article .categories .header, article .tags .header {
   background-color: #999;
   color: #fff;
-  margin-left: 0;
 }
-/* line 207, sass/style.scss */
+/* line 206, sass/style.scss */
 article .categories li {
   background-color: #ef9c43;
 }
 
-/* line 217, sass/style.scss */
+/* line 216, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin: 0 auto 20px;
   max-width: 800px;
   clear: both;
 }
-/* line 223, sass/style.scss */
+/* line 222, sass/style.scss */
 footer p, footer h1, footer h2, footer h3, footer h4, footer li {
   padding: 15px 5%;
   font-size: 20px;
@@ -427,73 +426,73 @@ footer p, footer h1, footer h2, footer h3, footer h4, footer li {
 }
 
 @media all and (max-width: 870px) {
-  /* line 237, sass/style.scss */
+  /* line 236, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 
-  /* line 243, sass/style.scss */
+  /* line 242, sass/style.scss */
   .portfolio-tile {
     width: 43.5%;
   }
 
-  /* line 247, sass/style.scss */
+  /* line 246, sass/style.scss */
   .portfolio-tile:nth-child(2n+1) {
     margin-left: 0;
   }
 
-  /* line 251, sass/style.scss */
+  /* line 250, sass/style.scss */
   .portfolio-tile:nth-child(2n+2) {
     margin-right: 0;
   }
 }
 @media all and (max-width: 600px) {
-  /* line 258, sass/style.scss */
+  /* line 257, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 262, sass/style.scss */
+  /* line 261, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 268, sass/style.scss */
+  /* line 267, sass/style.scss */
   .navigation li {
     width: 100%;
   }
-  /* line 272, sass/style.scss */
+  /* line 271, sass/style.scss */
   .navigation ul {
     height: auto;
   }
 
-  /* line 278, sass/style.scss */
+  /* line 277, sass/style.scss */
   .mini-nav li {
     width: auto;
     min-width: 100px;
     font-size: 16px;
   }
-  /* line 284, sass/style.scss */
+  /* line 283, sass/style.scss */
   .mini-nav ul {
     height: 35px;
   }
 
-  /* line 289, sass/style.scss */
+  /* line 288, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 293, sass/style.scss */
+  /* line 292, sass/style.scss */
   #page {
     max-width: 90%;
   }
 
-  /* line 297, sass/style.scss */
+  /* line 296, sass/style.scss */
   #portfolio-item-content article {
     margin-top: 0 !important;
   }
 
-  /* line 301, sass/style.scss */
+  /* line 300, sass/style.scss */
   .portfolio-tile {
     width: 90%;
     padding: 30px 5% 5%;
