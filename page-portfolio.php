@@ -10,7 +10,7 @@
 <?php #get_sidebar(); ?>
 
 <div id="portfolio" role="main">
-    <?php 
+    <?php
     $args=array(
       'post_type' => 'portfolio-item',
       'posts_per_page' => -1,
@@ -24,11 +24,31 @@
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
             <?php if (has_post_thumbnail() ) : ?>
                 <?php get_template_part( 'content', 'portfolio-tile' ); ?>
-            <?php endif ?>    
+            <?php endif ?>
         <?php endwhile; ?>
     <?php endif; ?>
 </div>
 
 <?php wp_reset_query(); ?>
+
+<div id="content">
+    <article>
+
+    <?php the_content() ?>
+
+    <?php $features = get_terms('key-features') ?>
+    <?php if (count($features) > 0) : ?>
+        <ul class="key-features">
+            <li class="header">Features:</li>
+            <?php foreach ($features as $feature) : ?>
+                <li><a href="<?= get_term_link($feature) ?>" rel="tag"><?= $feature->name ?></a></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+    <?php endif ?>
+
+    </article>
+</div>
+
 
 <?php get_footer(); ?>

@@ -7,7 +7,7 @@ body {
 
 /* line 16, sass/_typography.scss */
 p, h1, h2, h3, h4, li {
-  padding-bottom: 0.75em;
+  padding-bottom: 15px;
   font-size: 16px;
   line-height: 1.25em;
 }
@@ -31,7 +31,7 @@ a:hover {
 /* line 35, sass/_typography.scss */
 h1 {
   font-size: 44px;
-  padding-bottom: 0.15em;
+  padding-bottom: 7.5px;
   color: #1b1f2a;
   font-weight: bold;
 }

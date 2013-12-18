@@ -82,7 +82,7 @@ body {
 
 /* line 16, sass/_typography.scss */
 p, h1, h2, h3, h4, li {
-  padding-bottom: 0.75em;
+  padding-bottom: 15px;
   font-size: 16px;
   line-height: 1.25em;
 }
@@ -106,7 +106,7 @@ a:hover {
 /* line 35, sass/_typography.scss */
 h1 {
   font-size: 44px;
-  padding-bottom: 0.15em;
+  padding-bottom: 7.5px;
   color: #1b1f2a;
   font-weight: bold;
 }
@@ -303,7 +303,7 @@ body.admin-bar .mini-nav {
 
 /* line 148, sass/style.scss */
 #portfolio {
-  overflow: auto;
+  overflow: visible;
   max-width: none;
 }
 
@@ -379,32 +379,47 @@ article iframe {
   max-width: 100%;
 }
 /* line 177, sass/style.scss */
-article .key-features {
-  padding: 0 0 24.9px;
+article .post-meta {
+  color: #d47612;
 }
-/* line 180, sass/style.scss */
-article .key-features li {
+/* line 181, sass/style.scss */
+article .key-features, article .categories, article .tags {
+  padding: 0 0 15px;
+}
+/* line 184, sass/style.scss */
+article .key-features li, article .categories li, article .tags li {
   list-style-type: none;
   display: inline-block;
   background-color: #9f88b1;
   padding: 5px 7.5px;
   margin: 0 5px 7.5px;
-  -webkit-box-shadow: #333333 3px 2px 2px;
-  -moz-box-shadow: #333333 3px 2px 2px;
-  box-shadow: #333333 3px 2px 2px;
+  -webkit-box-shadow: #666666 3px 2px 2px;
+  -moz-box-shadow: #666666 3px 2px 2px;
+  box-shadow: #666666 3px 2px 2px;
 }
-/* line 188, sass/style.scss */
-article .key-features li a {
+/* line 192, sass/style.scss */
+article .key-features li a, article .categories li a, article .tags li a {
   color: #fff;
 }
+/* line 198, sass/style.scss */
+article .key-features .header, article .categories .header, article .tags .header {
+  background-color: #999;
+  color: #fff;
+  margin-left: 0;
+}
+/* line 207, sass/style.scss */
+article .categories li {
+  background-color: #ef9c43;
+}
 
-/* line 196, sass/style.scss */
+/* line 217, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin: 0 auto 20px;
   max-width: 800px;
+  clear: both;
 }
-/* line 201, sass/style.scss */
+/* line 223, sass/style.scss */
 footer p, footer h1, footer h2, footer h3, footer h4, footer li {
   padding: 15px 5%;
   font-size: 20px;
@@ -412,63 +427,73 @@ footer p, footer h1, footer h2, footer h3, footer h4, footer li {
 }
 
 @media all and (max-width: 870px) {
-  /* line 215, sass/style.scss */
+  /* line 237, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 
-  /* line 221, sass/style.scss */
+  /* line 243, sass/style.scss */
   .portfolio-tile {
-    width: 42%;
+    width: 43.5%;
+  }
+
+  /* line 247, sass/style.scss */
+  .portfolio-tile:nth-child(2n+1) {
+    margin-left: 0;
+  }
+
+  /* line 251, sass/style.scss */
+  .portfolio-tile:nth-child(2n+2) {
+    margin-right: 0;
   }
 }
 @media all and (max-width: 600px) {
-  /* line 228, sass/style.scss */
+  /* line 258, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 232, sass/style.scss */
+  /* line 262, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 238, sass/style.scss */
+  /* line 268, sass/style.scss */
   .navigation li {
     width: 100%;
   }
-  /* line 242, sass/style.scss */
+  /* line 272, sass/style.scss */
   .navigation ul {
     height: auto;
   }
 
-  /* line 248, sass/style.scss */
+  /* line 278, sass/style.scss */
   .mini-nav li {
     width: auto;
     min-width: 100px;
     font-size: 16px;
   }
-  /* line 254, sass/style.scss */
+  /* line 284, sass/style.scss */
   .mini-nav ul {
     height: 35px;
   }
 
-  /* line 259, sass/style.scss */
+  /* line 289, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 263, sass/style.scss */
+  /* line 293, sass/style.scss */
   #page {
     max-width: 90%;
   }
 
-  /* line 267, sass/style.scss */
+  /* line 297, sass/style.scss */
   #portfolio-item-content article {
     margin-top: 0 !important;
   }
 
-  /* line 271, sass/style.scss */
+  /* line 301, sass/style.scss */
   .portfolio-tile {
     width: 90%;
     padding: 30px 5% 5%;
