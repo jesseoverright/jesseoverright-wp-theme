@@ -87,11 +87,11 @@ blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:afte
 /* line 88, sass/_typography.scss */
 img.alignleft {
   float: left;
-  margin: 10px 15px 10px 0;
+  margin: 0 15px 15px 0;
 }
 
 /* line 93, sass/_typography.scss */
 img.alignright {
   float: right;
-  margin: 10px 0 10px 15px;
+  margin: 0 0 15px 15px;
 }
