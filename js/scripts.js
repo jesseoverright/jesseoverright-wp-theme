@@ -7,12 +7,21 @@ jQuery(document).ready(function(){
     // set margin top for article so it is just out of browser width
     jQuery('#portfolio-item-content article').css('margin-top',portfolio_height);
 
-    jQuery(window).scroll(function(){
-        // if window has scrolled down menu far enough (excluding border that will be applied)
-        if (jQuery(window).scrollTop() >= jQuery('.site-header').outerHeight()-8) {
+    // capture current size of navigation menu
+    var old_nav_height = jQuery('.navigation').height();
 
-            // capture current size of navigation menu
-            var old_nav_height = jQuery('.navigation').height();
+    jQuery(window).scroll(function(){
+        // check browser width for mobile and work around admin bar
+        if (jQuery(window).width() <= 600) {
+            // if scroll is past the navigation, header, and admin bar
+            scroll_limit = jQuery('.navigation').outerHeight() + jQuery('.site-header').outerHeight() + jQuery('#wpadminbar').outerHeight() - 8;
+        } else {
+            // if scroll is past the header excluding border that will be applied
+            scroll_limit = jQuery('.site-header').outerHeight()-8;
+        }
+
+        // if window has scrolled down menu far enough ()
+        if (jQuery(window).scrollTop() >= scroll_limit) {
 
             // adjust header height to compensate for the navigation change in the DOM, including it's margin
             jQuery('.site-header').css('margin-bottom',old_nav_height+15);
