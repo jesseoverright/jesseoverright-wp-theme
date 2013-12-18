@@ -310,7 +310,7 @@ body.admin-bar .mini-nav {
 /* line 154, sass/style.scss */
 .portfolio-tile {
   background-color: #fff;
-  padding: 30px 5% 5%;
+  padding: 30px 5% 10px;
   margin-bottom: 30px;
   -webkit-box-shadow: #ccd1de 3px 3px 2px;
   -moz-box-shadow: #ccd1de 3px 3px 2px;
@@ -351,7 +351,7 @@ body.admin-bar .mini-nav {
 /* line 171, sass/style.scss */
 article {
   background-color: #fff;
-  padding: 30px 5% 5%;
+  padding: 30px 5% 10px;
   margin-bottom: 30px;
   -webkit-box-shadow: #ccd1de 3px 3px 2px;
   -moz-box-shadow: #ccd1de 3px 3px 2px;
@@ -381,13 +381,14 @@ article iframe {
 /* line 177, sass/style.scss */
 article .post-meta {
   color: #d47612;
+  margin-top: -25px;
 }
-/* line 181, sass/style.scss */
+/* line 182, sass/style.scss */
 article .key-features, article .categories, article .tags {
   padding: 0 0 15px;
   clear: both;
 }
-/* line 186, sass/style.scss */
+/* line 187, sass/style.scss */
 article .key-features li, article .categories li, article .tags li {
   list-style-type: none;
   display: inline-block;
@@ -398,21 +399,21 @@ article .key-features li, article .categories li, article .tags li {
   -moz-box-shadow: #666666 3px 2px 2px;
   box-shadow: #666666 3px 2px 2px;
 }
-/* line 195, sass/style.scss */
+/* line 196, sass/style.scss */
 article .key-features li a, article .categories li a, article .tags li a {
   color: #fff;
 }
-/* line 201, sass/style.scss */
+/* line 202, sass/style.scss */
 article .key-features .header, article .categories .header, article .tags .header {
   background-color: #999;
   color: #fff;
 }
-/* line 209, sass/style.scss */
+/* line 210, sass/style.scss */
 article .categories li {
   background-color: #ef9c43;
 }
 
-/* line 219, sass/style.scss */
+/* line 220, sass/style.scss */
 footer {
   background-color: #c4b6cf;
   margin: 0 auto 20px;
@@ -420,7 +421,7 @@ footer {
   width: 800px;
   clear: both;
 }
-/* line 226, sass/style.scss */
+/* line 227, sass/style.scss */
 footer p, footer h1, footer h2, footer h3, footer h4, footer li {
   padding: 15px 5%;
   font-size: 20px;
@@ -428,80 +429,80 @@ footer p, footer h1, footer h2, footer h3, footer h4, footer li {
 }
 
 @media all and (max-width: 870px) {
-  /* line 240, sass/style.scss */
+  /* line 241, sass/style.scss */
   header .social-icons li img {
     width: 25px;
   }
 
-  /* line 246, sass/style.scss */
+  /* line 247, sass/style.scss */
   .portfolio-tile {
     width: 43.5%;
   }
 
-  /* line 250, sass/style.scss */
+  /* line 251, sass/style.scss */
   .portfolio-tile:nth-child(2n+1) {
     margin-left: 0;
   }
 
-  /* line 254, sass/style.scss */
+  /* line 255, sass/style.scss */
   .portfolio-tile:nth-child(2n+2) {
     margin-right: 0;
   }
 }
 @media all and (max-width: 782px) {
-  /* line 260, sass/style.scss */
+  /* line 261, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 46px;
   }
 }
 @media all and (max-width: 600px) {
-  /* line 267, sass/style.scss */
+  /* line 268, sass/style.scss */
   header .site-header {
     font-size: 24px;
     text-align: center;
   }
-  /* line 271, sass/style.scss */
+  /* line 272, sass/style.scss */
   header .social-icons {
     display: none;
   }
 
-  /* line 277, sass/style.scss */
+  /* line 278, sass/style.scss */
   .navigation li {
     width: 100%;
   }
-  /* line 281, sass/style.scss */
+  /* line 282, sass/style.scss */
   .navigation ul {
     height: auto;
   }
 
-  /* line 287, sass/style.scss */
+  /* line 288, sass/style.scss */
   .mini-nav li {
     width: auto;
     min-width: 100px;
     font-size: 16px;
   }
-  /* line 293, sass/style.scss */
+  /* line 294, sass/style.scss */
   .mini-nav ul {
     height: 35px;
   }
 
-  /* line 298, sass/style.scss */
+  /* line 299, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 302, sass/style.scss */
+  /* line 303, sass/style.scss */
   #portfolio-item-content {
     max-width: 90%;
     overflow: visible;
   }
 
-  /* line 307, sass/style.scss */
+  /* line 308, sass/style.scss */
   #portfolio-item-content article {
     margin-top: 0 !important;
   }
 
-  /* line 311, sass/style.scss */
+  /* line 312, sass/style.scss */
   .portfolio-tile {
     width: 90%;
     padding: 30px 5% 5%;
