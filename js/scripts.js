@@ -53,7 +53,7 @@ jQuery(document).ready(function(){
                 if (opacity >= 1) {
                     jQuery('#portfolio-item-content').css('background','none');
                 } else {
-                    jQuery('#portfolio-item-content').css({'background-image': 'linear-gradient(rgba(221,221,221,' + opacity + '),rgba(221,221,221,' + opacity + ')), '+ background_image, 'background-repeat':'no-repeat','background-size':'100% auto'});
+                    jQuery('#portfolio-item-content').css({'background-image': '-webkit-linear-gradient(rgba(221,221,221,' + opacity + '),rgba(221,221,221,' + opacity + ')), -moz-linear-gradient(rgba(221,221,221,' + opacity + '),rgba(221,221,221,' + opacity + ')), -o-linear-gradient(rgba(221,221,221,' + opacity + '),rgba(221,221,221,' + opacity + ')), linear-gradient(rgba(221,221,221,' + opacity + '),rgba(221,221,221,' + opacity + ')), '+ background_image, 'background-repeat':'no-repeat','background-size':'100% auto'});
                 }
             }
         }
