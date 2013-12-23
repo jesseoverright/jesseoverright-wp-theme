@@ -36,7 +36,7 @@ jQuery(document).ready(function(){
         }
 
         /**
-         * on portfolio pages add paralax effect to articles by reducing margin top to zero while
+         * on portfolio pages add parallax effect to articles by reducing margin top to zero while
          * the top of the article div has not passed the browser window and the bottom of the article
          * is not visible in the browser window
          */
