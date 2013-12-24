@@ -6,29 +6,34 @@ body {
 }
 
 /* line 16, sass/_typography.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 20, sass/_typography.scss */
 p, h1, h2, h3, h4, li {
   padding-bottom: 15px;
   font-size: 16px;
   line-height: 1.25em;
 }
 
-/* line 22, sass/_typography.scss */
+/* line 26, sass/_typography.scss */
 a {
   color: #d47612;
   text-decoration: none;
 }
 
-/* line 27, sass/_typography.scss */
+/* line 31, sass/_typography.scss */
 a:visited {
   color: #434d68;
 }
 
-/* line 31, sass/_typography.scss */
+/* line 35, sass/_typography.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 35, sass/_typography.scss */
+/* line 39, sass/_typography.scss */
 h1 {
   font-size: 44px;
   padding-bottom: 7.5px;
@@ -36,68 +41,68 @@ h1 {
   font-weight: bold;
 }
 
-/* line 43, sass/_typography.scss */
+/* line 47, sass/_typography.scss */
 h2 {
   color: #1b1f2a;
   font-size: 28px;
   font-weight: bold;
 }
 
-/* line 50, sass/_typography.scss */
+/* line 54, sass/_typography.scss */
 h3 {
   color: #795e8e;
   font-size: 24px;
 }
 
-/* line 56, sass/_typography.scss */
+/* line 60, sass/_typography.scss */
 h4 {
   font-weight: bold;
   font-size: 20px;
 }
 
-/* line 62, sass/_typography.scss */
+/* line 66, sass/_typography.scss */
 ul {
   padding: 15px;
 }
 
-/* line 66, sass/_typography.scss */
+/* line 70, sass/_typography.scss */
 li {
   list-style-type: square;
   list-style-position: inside;
 }
 
-/* line 72, sass/_typography.scss */
+/* line 76, sass/_typography.scss */
 blockquote {
   margin-left: 15px;
 }
-/* line 75, sass/_typography.scss */
+/* line 79, sass/_typography.scss */
 blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote li {
   font-size: 26.56px;
   font-style: italic;
 }
-/* line 80, sass/_typography.scss */
+/* line 84, sass/_typography.scss */
 blockquote p:before, blockquote h1:before, blockquote h2:before, blockquote h3:before, blockquote h4:before, blockquote li:before {
   content: '“';
 }
-/* line 83, sass/_typography.scss */
+/* line 87, sass/_typography.scss */
 blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:after, blockquote h4:after, blockquote li:after {
   content: '”';
 }
 
-/* line 88, sass/_typography.scss */
+/* line 92, sass/_typography.scss */
 img.alignleft {
   float: left;
   margin: 0 15px 15px 0;
 }
 
-/* line 93, sass/_typography.scss */
+/* line 97, sass/_typography.scss */
 img.alignright {
   float: right;
   margin: 0 0 15px 15px;
 }
 
 @media all and (max-width: 600px) {
-  /* line 99, sass/_typography.scss */
+  /* line 103, sass/_typography.scss */
   p, h1, h2, h3, h4, li {
     word-wrap: break-word;
   }
