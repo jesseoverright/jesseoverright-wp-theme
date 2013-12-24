@@ -14,8 +14,8 @@
     $args=array(
       'post_type' => 'portfolio-item',
       'posts_per_page' => -1,
-      'orderby' => 'title',
-      'order' => 'asc'
+      'orderby' => 'date',
+      'order' => 'desc'
     );
     $my_query = null;
     $my_query = new WP_Query($args);
