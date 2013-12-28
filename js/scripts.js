@@ -42,7 +42,7 @@ jQuery(document).ready(function(){
          */
         if (((parseInt(jQuery('#portfolio-item-content article').css('margin-top')) > 0) && (jQuery(window).scrollTop() <= jQuery('#portfolio-item-content article').offset().top)) && ((jQuery(window).scrollTop() + jQuery(window).height() <= jQuery('#portfolio-item-content article').offset().top + jQuery('#portfolio-item-content article').height()))) {
 
-            if ( (portfolio_height - jQuery(window).scrollTop()*1.35) > 0) {
+            if ( (portfolio_height - jQuery(window).scrollTop()*1.35) > 0 && jQuery(window).width() > 1024) {
 
                 // adjust margin-top based on distance scrolled
                 jQuery('#portfolio-item-content article').css('margin-top',portfolio_height - jQuery(window).scrollTop()*1.25);
