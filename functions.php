@@ -43,6 +43,17 @@ function add_custom_admin_css() {
 
 add_action( 'admin_enqueue_scripts', 'add_custom_admin_css' );
 
+
+/**
+ * Update the default contact form success message used by Jetpack.
+ */
+function jo_change_contact_form_success_message( $msg ) {
+    global $contact_form_message;
+    return '<h3>' . 'Thanks for contacting me! I\'ll try to respond as soon as possible. ' . '</h3>' . wp_kses($contact_form_message, array('br' => array(), 'blockquote' => array()));;
+}
+
+add_filter( 'grunion_contact_form_success_message', 'jo_change_contact_form_success_message' );
+
 /**
  * Portfolio Content Type
  * custom content type to define portfolio items and specific details related to them.
