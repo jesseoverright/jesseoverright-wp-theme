@@ -185,3 +185,60 @@ function create_key_features_taxonomy()
 }
 
 add_action( 'init', 'create_key_features_taxonomy', 0 );
+
+// add the published portfolio item counts to the "At a Glance" section
+function add_portfolio_item_counts() {
+        if (!post_type_exists('portfolio-item')) {
+             return;
+        }
+
+        $num_posts = wp_count_posts( 'portfolio-item' );
+        $num = number_format_i18n( $num_posts->publish );
+        $text = _n( 'Portfolio Item', 'Portfolio Items', intval($num_posts->publish) );
+        if ( current_user_can( 'edit_posts' ) ) {
+            $num = "<a href='edit.php?post_type=portfolio-item'>$num";
+            $text = "$text</a>";
+        }
+
+        echo '<li class="portfolio-count">' . $num . ' ' . $text . '</li>' ;
+
+}
+
+add_action('dashboard_glance_items', 'add_portfolio_item_counts');
+
+// Add details of portfolio item content to admin columns
+function portfolio_columns_display($post_columns, $post_id){
+    switch ($post_columns)
+    {
+        case "key-features":
+            if ($tag_list = get_the_term_list( $post_id, 'key-features', '', ', ', '' ) ) {
+                echo $tag_list;
+            } else {
+                    echo __('None');
+                }
+            break;
+        case "featured-image":
+            if ($thumbnail = get_the_post_thumbnail($post_id, 'thumbnail'))
+                echo $thumbnail;
+            else {
+                    echo __('None');
+                }
+            break;
+    }
+}
+
+add_action("manage_posts_custom_column",  "portfolio_columns_display", 10, 2);
+
+// set the custom columns for portfolio items
+function add_new_portfolio_item_columns($portfolio_columns) {
+    $new_columns['cb'] = '<input type="checkbox" />';
+    $new_columns['featured-image'] = _x('Featured Image', 'column name');
+    $new_columns['title'] = __('Title');
+    $new_columns['key-features'] = _x('Key Features', 'column name');
+    $new_columns['date'] = _x('Date', 'column name');
+
+    return $new_columns;
+
+}
+
+add_filter('manage_edit-portfolio-item_columns', 'add_new_portfolio_item_columns');
