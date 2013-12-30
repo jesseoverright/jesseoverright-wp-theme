@@ -164,20 +164,32 @@ blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:afte
   content: '”';
 }
 
-/* line 92, sass/_typography.scss */
+/* line 93, sass/_typography.scss */
+form input[type="text"], form input[type="email"], form textarea {
+  width: 97%;
+  font-size: 20px;
+  padding: 1%;
+  border: 2px inset;
+}
+/* line 100, sass/_typography.scss */
+form input[type="submit"] {
+  font-size: 24px;
+}
+
+/* line 105, sass/_typography.scss */
 img.alignleft {
   float: left;
   margin: 0 15px 15px 0;
 }
 
-/* line 97, sass/_typography.scss */
+/* line 110, sass/_typography.scss */
 img.alignright {
   float: right;
   margin: 0 0 15px 15px;
 }
 
 @media all and (max-width: 600px) {
-  /* line 103, sass/_typography.scss */
+  /* line 116, sass/_typography.scss */
   p, h1, h2, h3, h4, li {
     word-wrap: break-word;
   }
