@@ -102,13 +102,13 @@ form input[type="submit"] {
 }
 
 /* line 105, sass/_typography.scss */
-img.alignleft {
+.alignleft {
   float: left;
   margin: 0 15px 15px 0;
 }
 
 /* line 110, sass/_typography.scss */
-img.alignright {
+.alignright {
   float: right;
   margin: 0 0 15px 15px;
 }
