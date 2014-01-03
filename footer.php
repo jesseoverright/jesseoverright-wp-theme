@@ -1,4 +1,7 @@
-<footer role="contentinfo"><p>&copy; 2013-<?= date('Y') ?> Jesse Overright</p></footer>
+<footer role="contentinfo">
+    <p>&copy; 2013-<?= date('Y') ?> Jesse Overright</p>
+    <?php include 'social-media-icons.php' ?>
+</footer>
 
 <?php wp_footer(); ?>
 </div> <!-- page -->
