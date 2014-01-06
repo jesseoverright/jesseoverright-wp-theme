@@ -1,121 +1,136 @@
 @import url("http://fonts.googleapis.com/css?family=Karla");
-/* line 11, sass/_typography.scss */
+/* line 17, sass/_typography.scss */
 body {
   font-family: Karla, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.25em;
 }
 
-/* line 16, sass/_typography.scss */
+/* line 22, sass/_typography.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 20, sass/_typography.scss */
-p, h1, h2, h3, h4, li {
+/* line 26, sass/_typography.scss */
+p {
   padding-bottom: 15px;
   font-size: 16px;
   line-height: 1.25em;
 }
 
-/* line 26, sass/_typography.scss */
+/* line 30, sass/_typography.scss */
 a {
   color: #d47612;
   text-decoration: none;
 }
 
-/* line 31, sass/_typography.scss */
+/* line 35, sass/_typography.scss */
 a:visited {
   color: #434d68;
 }
 
-/* line 35, sass/_typography.scss */
+/* line 39, sass/_typography.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 39, sass/_typography.scss */
+/* line 43, sass/_typography.scss */
 h1 {
+  padding-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.25em;
   font-size: 44px;
   padding-bottom: 7.5px;
   color: #1b1f2a;
   font-weight: bold;
 }
 
-/* line 47, sass/_typography.scss */
+/* line 51, sass/_typography.scss */
 h2 {
+  padding-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.25em;
   color: #1b1f2a;
   font-size: 28px;
   font-weight: bold;
 }
 
-/* line 54, sass/_typography.scss */
+/* line 58, sass/_typography.scss */
 h3 {
+  padding-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.25em;
   color: #795e8e;
   font-size: 24px;
 }
 
-/* line 60, sass/_typography.scss */
+/* line 64, sass/_typography.scss */
 h4 {
+  padding-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.25em;
   font-weight: bold;
   font-size: 20px;
 }
 
-/* line 66, sass/_typography.scss */
+/* line 70, sass/_typography.scss */
 ul {
   padding: 15px;
 }
 
-/* line 70, sass/_typography.scss */
+/* line 74, sass/_typography.scss */
 li {
+  padding-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.25em;
   list-style-type: square;
   list-style-position: inside;
 }
 
-/* line 76, sass/_typography.scss */
+/* line 80, sass/_typography.scss */
 blockquote {
   margin-left: 15px;
 }
-/* line 79, sass/_typography.scss */
-blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote li {
+/* line 83, sass/_typography.scss */
+blockquote p {
   font-size: 26.56px;
   font-style: italic;
 }
-/* line 84, sass/_typography.scss */
-blockquote p:before, blockquote h1:before, blockquote h2:before, blockquote h3:before, blockquote h4:before, blockquote li:before {
+/* line 88, sass/_typography.scss */
+blockquote p:before {
   content: '“';
 }
-/* line 87, sass/_typography.scss */
-blockquote p:after, blockquote h1:after, blockquote h2:after, blockquote h3:after, blockquote h4:after, blockquote li:after {
+/* line 91, sass/_typography.scss */
+blockquote p:after {
   content: '”';
 }
 
-/* line 93, sass/_typography.scss */
+/* line 97, sass/_typography.scss */
 form input[type="text"], form input[type="email"], form textarea {
   width: 97%;
   font-size: 20px;
   padding: 1%;
   border: 2px inset;
 }
-/* line 100, sass/_typography.scss */
+/* line 104, sass/_typography.scss */
 form input[type="submit"] {
   font-size: 24px;
 }
 
-/* line 105, sass/_typography.scss */
+/* line 109, sass/_typography.scss */
 .alignleft {
   float: left;
   margin: 0 15px 15px 0;
 }
 
-/* line 110, sass/_typography.scss */
+/* line 114, sass/_typography.scss */
 .alignright {
   float: right;
   margin: 0 0 15px 15px;
 }
 
 @media all and (max-width: 600px) {
-  /* line 116, sass/_typography.scss */
-  p, h1, h2, h3, h4, li {
+  /* line 120, sass/_typography.scss */
+  p {
     word-wrap: break-word;
   }
 }
