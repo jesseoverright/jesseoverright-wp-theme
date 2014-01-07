@@ -186,26 +186,27 @@ form input[type="text"], form input[type="email"], form textarea {
   padding: 1%;
   border: 2px inset;
   margin-bottom: 15px;
+  max-height: 190px;
 }
-/* line 105, sass/_typography.scss */
+/* line 106, sass/_typography.scss */
 form input[type="submit"] {
   font-size: 24px;
 }
 
-/* line 110, sass/_typography.scss */
+/* line 111, sass/_typography.scss */
 .alignleft {
   float: left;
   margin: 0 15px 15px 0;
 }
 
-/* line 115, sass/_typography.scss */
+/* line 116, sass/_typography.scss */
 .alignright {
   float: right;
   margin: 0 0 15px 15px;
 }
 
 @media all and (max-width: 600px) {
-  /* line 121, sass/_typography.scss */
+  /* line 122, sass/_typography.scss */
   p {
     word-wrap: break-word;
   }
