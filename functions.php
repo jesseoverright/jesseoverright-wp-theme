@@ -33,6 +33,9 @@ function add_scripts_and_styles() {
 
     // add the theme helper javascript
     wp_enqueue_script( 'jesseoverright-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '2013-12-13', true );
+
+    // remove the grunion.css styles from contact form
+    wp_deregister_style('grunion.css');
 }
 
 add_action( 'wp_enqueue_scripts', 'add_scripts_and_styles' );
