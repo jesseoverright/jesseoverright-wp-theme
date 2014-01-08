@@ -44,6 +44,9 @@ add_action( 'wp_enqueue_scripts', 'add_scripts_and_styles' );
 
 function add_custom_admin_css() {
     wp_enqueue_style( 'joverright-admin-style', get_template_directory_uri() . '/admin-style.css');
+
+    // add retina.js for image retina support
+    wp_enqueue_script( 'retina_js', get_template_directory_uri() . '/js/retina-1.1.0.min.js', '', '2014-01-08', true);
 }
 
 add_action( 'admin_enqueue_scripts', 'add_custom_admin_css' );
