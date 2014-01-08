@@ -21,7 +21,6 @@ function basic_theme_setup() {
 
     // add portfolio tile size
     add_image_size('portfolio-tile', 350, 250, true);
-
 }
 
 add_action( 'after_setup_theme', 'basic_theme_setup' );
@@ -33,6 +32,9 @@ function add_scripts_and_styles() {
 
     // add the theme helper javascript
     wp_enqueue_script( 'jesseoverright-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '2013-12-13', true );
+
+    // add retina.js for image retina display support
+    wp_enqueue_script( 'retina_js', get_template_directory_uri() . '/js/retina-1.1.0.min.js', '', '2014-01-08', true);
 
     // remove the grunion.css styles from contact form
     wp_deregister_style('grunion.css');
@@ -210,7 +212,7 @@ function add_portfolio_item_counts() {
 add_action('dashboard_glance_items', 'add_portfolio_item_counts');
 
 // Add details of portfolio item content to admin columns
-function portfolio_columns_display($post_columns, $post_id){
+function portfolio_columns_display( $post_columns, $post_id ){
     switch ($post_columns)
     {
         case "key-features":
@@ -233,7 +235,7 @@ function portfolio_columns_display($post_columns, $post_id){
 add_action("manage_posts_custom_column",  "portfolio_columns_display", 10, 2);
 
 // set the custom columns for portfolio items
-function add_new_portfolio_item_columns($portfolio_columns) {
+function add_new_portfolio_item_columns( $portfolio_columns ) {
     $new_columns['cb'] = '<input type="checkbox" />';
     $new_columns['featured-image'] = _x('Featured Image', 'column name');
     $new_columns['title'] = __('Title');
@@ -245,3 +247,56 @@ function add_new_portfolio_item_columns($portfolio_columns) {
 }
 
 add_filter('manage_edit-portfolio-item_columns', 'add_new_portfolio_item_columns');
+
+/**
+ * Enables support for Retina display devices
+ *
+ */
+function retina_images_attachment_meta( $metadata, $attachment_id ) {
+    if ( array_key_exists('sizes', $metadata) ) {
+        foreach ($metadata['sizes'] as $size => $attributes) {
+            create_retina_images( get_attached_file( $attachment_id), $attributes['width'], $attributes['height'], true);
+        }
+    }
+
+    return $metadata;
+}
+
+function create_retina_images( $file, $width, $height, $crop = false ) {
+    $resized_file = wp_get_image_editor( $file );
+    if ( ! is_wp_error( $resized_file ) ) {
+        $filename = $resized_file->generate_filename( $width . 'x' . $height . '@2x' );
+
+        $resized_file->resize($width * 2, $height * 2, $crop);
+        $resized_file->save($filename);
+
+        $info = $resized_file->get_size();
+
+        return array(
+            'file' => wp_basename( $filename ),
+            'width' => $info['width'],
+            'height' => $info['height'],
+        );
+    }
+
+    return false;
+}
+
+function delete_retina_images( $attachment_id ) {
+    $metadata = wp_get_attachment_metadata( $attachment_id );
+    $upload_directory = wp_upload_dir();
+    $path = pathinfo( $metadata['file'] );
+
+    if ( array_key_exists('sizes', $metadata) ) {
+        foreach ($metadata['sizes'] as $size => $attributes) {
+            $original_filename = $upload_directory['basedir'] . '/' . $path['dirname'] . '/' . $attributes['file'];
+            $retina_filename = substr_replace( $original_filename, '@2x.', strrpos( $original_filename, '.' ), strlen( '.' ));
+            if ( file_exists( $retina_filename ) ) {
+                unlink( $retina_filename );
+            }
+        }
+    }
+}
+
+add_filter( 'wp_generate_attachment_metadata', 'retina_images_attachment_meta', 10, 2 );
+add_filter( 'delete_attachment', 'delete_retina_images' );
