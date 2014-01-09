@@ -3,35 +3,29 @@
 
     displays portfolio items in a grid layout
 
+    Uses the custom wp_nav_menu "portfolio" to set ordering of posts
+    and modified version of content-portfolio-title.php to display content.
+
     by Jesse Overright
 */?>
 <?php get_header(); ?>
 
-<?php #get_sidebar(); ?>
+<?php $portfolio_items = ( wp_get_nav_menu_items( 'portfolio') ); ?>
+
 
 <div id="portfolio" role="main">
-    <?php
-    $args=array(
-      'post_type' => 'portfolio-item',
-      'posts_per_page' => -1,
-      'orderby' => 'date',
-      'order' => 'desc'
-    );
-    $my_query = null;
-    $my_query = new WP_Query($args);
-    ?>
-    <?php if( $my_query->have_posts() ) : ?>
-        <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-            <?php if (has_post_thumbnail() ) : ?>
-                <?php get_template_part( 'content', 'portfolio-tile' ); ?>
-            <?php endif ?>
-        <?php endwhile; ?>
-    <?php endif; ?>
+    <?php foreach ($portfolio_items as $item) : ?>
+        <?php $post = get_post($item->object_id); ?>
+        <div class="portfolio-tile">
+            <a href="<?= get_permalink($post->ID) ?>" title="<?= get_the_title($post->ID) ?>"><?= get_the_post_thumbnail($post->ID, 'portfolio-tile') ?></a>
+            <h3><a href="<?= get_permalink($post->ID) ?>" title="<?= get_the_title($post->ID) ?>"><?= get_the_title($post->ID) ?></a></h3>
+        </div>
+    <?php endforeach ?>
+
 </div>
 
-<?php wp_reset_query(); ?>
-
 <div id="content">
+
     <article>
 
     <?php the_content() ?>

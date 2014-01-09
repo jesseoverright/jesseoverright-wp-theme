@@ -20,6 +20,6 @@
     </h1>
 </header>
 <div class="navigation" role="navigation">
-    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+    <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav-menu' ) ); ?>
 </div>
 <div id="page">

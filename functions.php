@@ -9,6 +9,11 @@ function basic_theme_setup() {
     // add basic styles to editor window
     add_editor_style( array('editor-style.css') );
 
+    // add menu options for the main navigation and the portfolio page.
+    register_nav_menu( 'portfolio', __( 'Portfolio', 'jesseoverright' ) );
+    register_nav_menu( 'main-menu', __( 'Main Menu', 'jesseoverright' ) );
+
+
     // add featured image support
     add_theme_support( 'post-thumbnails' );
 
