@@ -12,16 +12,16 @@
 
 <?php $portfolio_items = ( wp_get_nav_menu_items( 'portfolio') ); ?>
 
-
 <div id="portfolio" role="main">
-    <?php foreach ($portfolio_items as $item) : ?>
-        <?php $post = get_post($item->object_id); ?>
-        <div class="portfolio-tile">
-            <a href="<?= get_permalink($post->ID) ?>" title="<?= get_the_title($post->ID) ?>"><?= get_the_post_thumbnail($post->ID, 'portfolio-tile') ?></a>
-            <h3><a href="<?= get_permalink($post->ID) ?>" title="<?= get_the_title($post->ID) ?>"><?= get_the_title($post->ID) ?></a></h3>
-        </div>
-    <?php endforeach ?>
-
+    <?php if ( is_array( $portfolio_items ) ) : ?>
+        <?php foreach ($portfolio_items as $item) : ?>
+            <?php $post = get_post($item->object_id); ?>
+            <div class="portfolio-tile">
+                <a href="<?= get_permalink($post->ID) ?>" title="<?= get_the_title($post->ID) ?>"><?= get_the_post_thumbnail($post->ID, 'portfolio-tile') ?></a>
+                <h3><a href="<?= get_permalink($post->ID) ?>" title="<?= get_the_title($post->ID) ?>"><?= get_the_title($post->ID) ?></a></h3>
+            </div>
+        <?php endforeach ?>
+    <?php endif ?>
 </div>
 
 <div id="content">

@@ -96,6 +96,7 @@ class Portfolio_Content_Type {
             '_builtin' => false,
             'menu_position' => 5,
             'supports' => array('title', 'editor', 'revisions', 'thumbnail'),
+            'show_in_nav_menus' => true,
             'rewrite' => array('with_front' => false, 'slug' => 'portfolio')
         ));
 
