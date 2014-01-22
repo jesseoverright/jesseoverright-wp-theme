@@ -4,11 +4,15 @@
  *
  * by Jesse Overright
  */
+?>
 
-wp_list_comments( array(
-    'avatar_size' => 48,
-    'callback' => 'jo_comment',
-    'style' => 'div',
-));
+<div id="post-comments"></div>
 
-comment_form();
+<?php
+    wp_list_comments( array(
+        'avatar_size' => 48,
+        'callback' => 'jo_comment',
+        'style' => 'div',
+    ));
+
+    comment_form();

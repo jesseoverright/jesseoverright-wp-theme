@@ -7,7 +7,7 @@
     <?php if ( ! is_single() && get_comments_number() > 0 ) : ?>
         <ul class="comment-count">
             <li class="header">Comments:</li>
-            <li><a href="<?php the_permalink(); ?>#comment-1"><?php comments_number() ?></a></li>
+            <li><a href="<?php the_permalink(); ?>#post-comments"><?php comments_number() ?></a></li>
         </ul>
     <?php endif ?>
 
