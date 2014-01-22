@@ -1,15 +1,14 @@
 <?php
 /**
- * The template for displaying Comments
+ * The template for displaying comments and the submit comment form
  *
  * by Jesse Overright
  */
-?>
 
-<?php wp_list_comments( array(
-    'avatar_size' => 64,
+wp_list_comments( array(
+    'avatar_size' => 48,
     'callback' => 'jo_comment',
     'style' => 'div',
-)) ?>
+));
 
-<?php comment_form() ?>
+comment_form();

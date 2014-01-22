@@ -325,30 +325,28 @@ function jo_comment($comment, $args, $depth) {
 ?>
     <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
     <?php if ( 'div' != $args['style'] ) : ?>
-    <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
     <?php endif; ?>
+
     <div class="comment-author vcard">
     <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['avatar_size'] ); ?>
     <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
     </div>
-<?php if ($comment->comment_approved == '0') : ?>
-    <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-    <br />
-<?php endif; ?>
+
+    <?php if ($comment->comment_approved == '0') : ?>
+        <h4 class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></h4>
+    <?php endif; ?>
 
     <div class="comment-text">
         <?php comment_text() ?>
     </div>
 
     <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-        <?php
-            /* translators: 1: date, 2: time */
-            printf( __('Posted on %1$s'), get_comment_date()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-        ?>
+        <?php printf( __('Posted on %1$s'), get_comment_date()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' ); ?>
     </div>
 
     <div class="reply">
-    <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+        <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
     </div>
     <?php if ( 'div' != $args['style'] ) : ?>
     </div>
