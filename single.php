@@ -1,5 +1,5 @@
 <?php
-/** default template file
+/** single post template file
 
     by Jesse Overright
 */?>
@@ -10,6 +10,10 @@
 
         <?php while ( have_posts() ) : the_post(); ?>
             <?php get_template_part( 'content', 'post' ); ?>
+
+            <?php if ( comments_open() || get_comments_number() ) : ?>
+                <?php comments_template(); ?>
+            <?php endif ?>
         <?php endwhile; ?>
 
     <?php else : ?>
