@@ -96,6 +96,7 @@ class Portfolio_Content_Type {
             'public' => true,
             '_builtin' => false,
             'menu_position' => 5,
+            'menu_icon' => 'dashicons-portfolio',
             'supports' => array('title', 'editor', 'revisions', 'thumbnail'),
             'show_in_nav_menus' => true,
             'rewrite' => array('with_front' => false, 'slug' => 'portfolio')
