@@ -12,6 +12,7 @@ function basic_theme_setup() {
     // add menu options for the main navigation and the portfolio page.
     register_nav_menu( 'portfolio', __( 'Portfolio', 'jesseoverright' ) );
     register_nav_menu( 'main-menu', __( 'Main Menu', 'jesseoverright' ) );
+    register_nav_menu( 'front-page', __( 'Front Page', 'jesseoverright' ) );
 
 
     // add featured image support
