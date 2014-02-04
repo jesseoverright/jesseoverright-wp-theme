@@ -44,6 +44,10 @@ function add_scripts_and_styles() {
 
     // remove the grunion.css styles from contact form
     wp_deregister_style('grunion.css');
+
+    // add prism.js and css for syntax highlighting
+    wp_enqueue_style( 'prism', get_template_directory_uri() . '/prism.css');
+    wp_enqueue_script( 'prism-js', get_template_directory_uri() . '/js/prism.js', null, '2014-02-04', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'add_scripts_and_styles' );
