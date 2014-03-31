@@ -1,7 +1,7 @@
 <ul class="social-icons">
     <li>
         <a href="https://github.com/jesseoverright/">
-            <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                 <path id="Github__x28_alt_x29_" fill="#434d68" d="M70.709,15.029c1.17,2.657,1.928,7.07,0.797,10.301c4.625,3.949,6.214,13.549,3.982,21.394
     C82.08,47.227,89.931,46.482,95,48.505c-4.738-0.609-11.209-1.804-17.32-1.388c-1.158,0.079-2.874-0.044-2.79,1.585
     c7.075,0.556,14.104,1.16,19.913,2.973c-5.761-0.941-12.754-2.374-19.913-2.574c-2.957,5.835-8.907,8.703-17.122,9.307
@@ -22,7 +22,7 @@
     </li>
     <li>
         <a href="https://twitter.com/jesseover">
-            <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                 <path id="Twitter__x28_alt_x29_" fill="#434d68" d="M84.803,46.564c5.055-0.417,8.483-2.715,9.803-5.833c-1.824,1.12-7.484,2.341-10.61,1.178
                     c-0.153-0.734-0.324-1.432-0.492-2.062c-2.382-8.746-10.537-15.792-19.082-14.941c0.691-0.279,1.392-0.539,2.092-0.772
                     c0.94-0.337,6.459-1.235,5.59-3.183c-0.733-1.713-7.475,1.295-8.744,1.688c1.675-0.63,4.447-1.714,4.743-3.64
@@ -36,7 +36,7 @@
     </li>
     <li>
         <a href="http://www.linkedin.com/pub/jesse-overright/5b/362/734">
-            <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                 <path id="LinkedIn" fill="#434d68" d="M95,59.727V93H75.71V61.955c0-7.799-2.79-13.121-9.773-13.121c-5.33,0-8.502,3.587-9.897,7.056
                     c-0.509,1.241-0.64,2.967-0.64,4.704V93H36.104c0,0,0.26-52.58,0-58.028h19.295v8.225c-0.039,0.062-0.09,0.128-0.127,0.188h0.127
                     v-0.188c2.563-3.948,7.141-9.588,17.388-9.588C85.483,33.609,95,41.903,95,59.727z M15.919,7C9.318,7,5,11.33,5,17.024
@@ -47,7 +47,7 @@
     </li>
     <li>
         <a href="http://profiles.wordpress.org/jesseover/">
-            <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                 <path id="WordPress" fill="#434d68" d="M5,50c0,24.855,20.145,45,45,45c24.849,0,45-20.145,45-45C95,25.151,74.849,5,50,5C25.145,5,5,25.151,5,50z
                      M8.468,50c0-6.021,1.296-11.735,3.597-16.903l19.811,54.278C18.024,80.65,8.468,66.438,8.468,50z M50,91.531
                     c-4.076,0-8.014-0.594-11.734-1.686L50.73,53.639L63.496,88.61c0.083,0.206,0.185,0.389,0.293,0.565
@@ -64,7 +64,7 @@
     </li>
     <li>
         <a href="https://www.facebook.com/jesse.overright">
-            <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                 <path id="Facebook__x28_alt_x29_" fill="#434d68" d="M95,20.001C95,12.119,87.884,5,80,5h-60C12.116,5,5,12.119,5,20.001v59.998
                     C5,87.881,12.116,95,20.001,95H50V61H39V46h11v-5.844C50,30.077,57.569,21,66.875,21H79v15H66.875C65.548,36,64,37.611,64,40.024V46
                     h15v15H64v34h16c7.884,0,15-7.119,15-15.001V20.001z"/>
@@ -73,7 +73,7 @@
     </li>
     <li>
         <a href="https://plus.google.com/+JesseOverright/">
-                <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                     <path id="Google" fill="#434d68" d="M79.5,5H55.145c-6.383,0-14.422,0.942-21.158,6.49c-5.09,4.374-7.566,10.392-7.566,15.828
                         c0,9.211,7.094,18.546,19.625,18.546c1.182,0,2.477-0.12,3.787-0.235c-0.592,1.413-1.189,2.594-1.189,4.605
                         c0,3.663,1.893,5.903,3.547,8.03c-5.314,0.352-15.248,0.942-22.582,5.428c-6.975,4.142-9.107,10.16-9.107,14.414
