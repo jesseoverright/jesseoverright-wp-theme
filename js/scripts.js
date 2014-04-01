@@ -5,7 +5,7 @@ jQuery(document).ready(function(){
     portfolio_height = jQuery(window).height()-jQuery('#page').offset().top;
 
     // set margin top for article so it is just out of browser width
-    jQuery('#portfolio-item-content article').css('margin-top',portfolio_height);
+    jQuery('#portfolio-item-content article').css('margin-top',portfolio_height - 175);
 
     // capture current size of navigation menu
     var old_nav_height = jQuery('.navigation').height();
@@ -45,7 +45,7 @@ jQuery(document).ready(function(){
             if ( (portfolio_height - jQuery(window).scrollTop()*1.35) > 0 && jQuery(window).width() > 1024) {
 
                 // adjust margin-top based on distance scrolled
-                jQuery('#portfolio-item-content article').css('margin-top',portfolio_height - jQuery(window).scrollTop()*1.25);
+                jQuery('#portfolio-item-content article').css('margin-top',portfolio_height - jQuery(window).scrollTop()*1.25 - 175);
                 // set opacity
                 opacity = jQuery(window).scrollTop() / (portfolio_height / 2);
 
