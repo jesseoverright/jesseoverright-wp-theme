@@ -799,11 +799,16 @@ footer .social-icons li img, footer .social-icons li svg {
   }
 
   /* line 373, sass/style.scss */
+  .size-medium {
+    width: 100%;
+  }
+
+  /* line 377, sass/style.scss */
   body.admin-bar .mini-nav {
     top: 0;
   }
 
-  /* line 377, sass/style.scss */
+  /* line 381, sass/style.scss */
   .portfolio-tile {
     width: 90%;
     padding: 30px 5% 5%;
