@@ -1,18 +1,18 @@
 <?php
 /** front page custom template file
 
-    uses the custom menu 'Front Page' to set order of posts
+    uses the custom menu 'Blog Posts' to set order of posts
     if a menu doesn't exists, displays only posts tagged in the "Hello World" category
 
     by Jesse Overright
 */?>
 <?php get_header(); ?>
 
-<?php $front_page_items = ( wp_get_nav_menu_items( 'front-page' ) ) ?>
+<?php $blog_posts = ( wp_get_nav_menu_items( 'blog-posts' ) ) ?>
 
 <div id="content" role="main">
-    <?php if ( is_array( $front_page_items ) ) : ?>
-        <?php foreach ($front_page_items as $item) : ?>
+    <?php if ( is_array( $blog_posts ) ) : ?>
+        <?php foreach ($blog_posts as $item) : ?>
             <?php
                 global $post;
                 $post = get_post($item->object_id);
