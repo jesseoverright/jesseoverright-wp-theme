@@ -355,9 +355,3 @@ function jo_comment($comment, $args, $depth) {
     <?php endif; ?>
 <?php
 }
-
-// override wordpress' default captioned image layout
-function remove_caption_width( $width ) {
-    return '';
-}
-add_filter( 'img_caption_shortcode_width', 'remove_caption_width');
