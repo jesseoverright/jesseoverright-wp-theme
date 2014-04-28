@@ -12,7 +12,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="backbone">
 <header role="banner">
     <?php include 'social-media-icons.php' ?>
     <h1 class="site-header">

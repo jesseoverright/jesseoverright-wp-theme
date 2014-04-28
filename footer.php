@@ -3,6 +3,10 @@
     <?php include 'social-media-icons.php' ?>
 </footer>
 
+<script type="text/template" id="tmpl-post">
+<?php get_template_part( '_content', 'post'); ?>
+</script>
+
 <?php wp_footer(); ?>
 </div> <!-- page -->
 <script>

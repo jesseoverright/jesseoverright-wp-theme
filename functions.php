@@ -36,6 +36,9 @@ function add_scripts_and_styles() {
     // add the main stylesheet
     wp_enqueue_style( 'jesseoverright-style', get_stylesheet_uri() );
 
+    // add backbone javascripts
+    wp_enqueue_script( 'js/jo-backbone.js' , get_template_directory_uri() . '/js/jo-backbone.js', array('wp-backbone'), '2014-04-28', true);
+
     // add the theme helper javascript
     wp_enqueue_script( 'jesseoverright-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '2013-12-13', true );
 
@@ -355,3 +358,25 @@ function jo_comment($comment, $args, $depth) {
     <?php endif; ?>
 <?php
 }
+
+
+/* backbone.js */
+
+function add_render_as_json_query_var( $vars ) {
+    $vars[] = 'render-as-json';
+    return $vars;
+}
+
+add_filter( 'query_vars', 'add_render_as_json_query_var' );
+
+#reroutes wordpress requests that include render-as-json query parameter to wp api json
+function render_as_json() {
+    global $wp_query;
+    global $post;
+
+    if ( $wp_query->query_vars['render-as-json'] ) {
+        wp_redirect( '/wp-json/posts/' . $post->ID );
+    }
+}
+
+add_action( 'template_redirect', 'render_as_json' );
