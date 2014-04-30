@@ -37,7 +37,27 @@ function add_scripts_and_styles() {
     wp_enqueue_style( 'jesseoverright-style', get_stylesheet_uri() );
 
     // add backbone javascripts
-    wp_enqueue_script( 'js/jo-backbone.js' , get_template_directory_uri() . '/js/jo-backbone.js', array('wp-backbone'), '2014-04-28', true);
+    $backbone_js_files = array();
+
+    // models
+    $backbone_js_files[] = 'js/models/post.js';
+    
+    // collections
+    $backbone_js_files[] = 'js/collections/posts.js';
+    
+    // views
+    $backbone_js_files[] = 'js/views/main.js';
+    $backbone_js_files[] = 'js/views/post.js';
+
+    // routers
+    $backbone_js_files[] = 'js/routers/router.js';
+    
+
+    foreach ($backbone_js_files as $file) {
+        wp_enqueue_script( $file, get_template_directory_uri() . '/' . $file, array('wp-backbone'), '2014-04-30', true);
+    }
+
+    wp_enqueue_script( 'js/jo-backbone.js' , get_template_directory_uri() . '/js/jo-backbone.js', $backbone_js_files, '2014-04-28', true);
 
     // add the theme helper javascript
     wp_enqueue_script( 'jesseoverright-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '2013-12-13', true );
