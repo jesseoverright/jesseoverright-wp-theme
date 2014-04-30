@@ -7,12 +7,28 @@ var app = app || {};
     // router.js
     var Router = Backbone.Router.extend({
         routes: {
+            'portfolio/': 'portfolio',
+            'portfolio-item/*': 'portfolio_item',
+            //'/': 'portfolio',
             // Catch all routes
-            '*notFound' : 'wp_api',
-            '' : 'wp_api'
+            '*notFound' : 'default',
+            '' : 'default'
         },
 
-        wp_api: function ( pathname ) {
+        portfolio: function ( pathname ) {
+            console.log('working');
+            // get portfolio items
+            var url = '/wp-json/posts/?type=portfolio-item';
+
+            app.portfolio_items.url = url;           
+            app.portfolio_items.fetch( {reset : true });
+
+            // get portfolio post
+            app.posts.url = '/wp-json/pages/?filter[pagename]=portfolio';
+            app.posts.fetch( {reset : true });
+        },
+
+        default: function ( pathname ) {
             var url = '/';
 
             if ( !_.isNull( pathname ) ) {
@@ -22,6 +38,7 @@ var app = app || {};
 
             app.posts.url = url + '?render-as-json=true';           
             app.posts.fetch( {reset : true });
+            app.portfolio_items.reset();
         }
     });
 

@@ -17,7 +17,9 @@ var app = app || {};
 
         initialize : function() {
             this.$posts = $('#content');
-            this.listenTo( app.posts, 'reset', this.addAll);
+            this.$portfolio = $('#portfolio');
+            this.listenTo( app.posts, 'reset', this.addPosts);
+            this.listenTo( app.portfolio_items, 'reset', this.addPortfolioItems)
         },
 
         initRouter : function ( evt ) {
@@ -31,12 +33,22 @@ var app = app || {};
             app.router.navigate( pathname, {trigger: true});
         },
 
-        addAll : function() {
-            this.$posts.html( '' );
-            app.posts.each( this.addOne, this );           
+        addPortfolioItems : function () {
+            this.$portfolio.html( '' );
+            app.portfolio_items.each( this.portfolioView, this );
         },
 
-        addOne : function ( post ) {
+        addPosts : function() {
+            this.$posts.html( '' );
+            app.posts.each( this.postView, this );           
+        },
+
+        portfolioView : function ( portfolio ) {
+            var view = new app.PortfolioView( { model: portfolio } );
+            this.$portfolio.append( view.render().el );
+        },
+
+        postView : function ( post ) {
             var view = new app.PostView( { model: post } );
             this.$posts.append( view.render().el );                      
         }

@@ -3,8 +3,14 @@
     <?php include 'social-media-icons.php' ?>
 </footer>
 
+<?php $is_js = true; ?>
+
 <script type="text/template" id="tmpl-post">
-<?php get_template_part( '_content', 'post'); ?>
+<?php include locate_template('content-post.php'); ?>
+</script>
+
+<script type="text/template" id="tmpl-portfolio-tile">
+<?php include locate_template('content-portfolio-tile.php'); ?>
 </script>
 
 <?php wp_footer(); ?>

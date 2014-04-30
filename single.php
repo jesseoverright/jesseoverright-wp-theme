@@ -5,6 +5,7 @@
 */?>
 <?php get_header(); ?>
 
+<div id="portfolio"></div>
 <div id="content" role="main">
     <?php if ( have_posts() ) : ?>
 

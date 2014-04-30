@@ -1,4 +1,4 @@
 <div class="portfolio-tile">
-    <a href="<?= get_permalink() ?>" title="<?= get_the_title() ?>"><?= the_post_thumbnail('portfolio-tile') ?></a>
-    <h3><a href="<?= get_permalink() ?>" title="<?= get_the_title() ?>"><?= get_the_title() ?></a></h3>
+    <a href="<?php if ($is_js) echo '{{{ data.link }}}'; else get_permalink() ?>" title="<?php if ($is_js) echo '{{{ data.title }}}'; else the_title() ?>"><?php if ($is_js) echo '<img width="280" height="200" src="{{{ data.featured_image.attachment_meta.sizes["portfolio-tile"].url }}}" class="attachment-portfolio-tile wp-post-image" alt="{{{ data.featured_image.title }}}">'; else the_post_thumbnail('portfolio-tile') ?></a>
+    <h3><a href="<?php if ($is_js) echo '{{{ data.link }}}'; else get_permalink() ?>" title="<?php if ($is_js) echo '{{{ data.title }}}'; else the_title() ?>"><?php if ($is_js) echo '{{{ data.title }}}'; else the_title() ?></a></h3>
 </div>

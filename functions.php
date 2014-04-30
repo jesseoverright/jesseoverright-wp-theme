@@ -41,13 +41,16 @@ function add_scripts_and_styles() {
 
     // models
     $backbone_js_files[] = 'js/models/post.js';
+    $backbone_js_files[] = 'js/models/portfolio.js';
     
     // collections
     $backbone_js_files[] = 'js/collections/posts.js';
-    
+    $backbone_js_files[] = 'js/collections/portfolioitems.js';
+
     // views
     $backbone_js_files[] = 'js/views/main.js';
     $backbone_js_files[] = 'js/views/post.js';
+    $backbone_js_files[] = 'js/views/portfolioitem.js';
 
     // routers
     $backbone_js_files[] = 'js/routers/router.js';
