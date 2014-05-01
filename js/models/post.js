@@ -9,7 +9,10 @@ var app = app || {};
             id: '',
             title: '',
             content: '',
-            type: 'post'
+            type: 'post',
+            featured_image : {
+                source: ''
+            }
         }
     });
 })();

@@ -11,7 +11,7 @@ var app = app || {};
             'portfolio/' : 'portfolio',
 
             // portfolio items
-            'portfolio-item/*' : 'portfolio_item',
+            //'portfolio/*' : 'single_post',
 
             // homepage or blog
             'blog/' : 'posts',

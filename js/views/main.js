@@ -64,7 +64,6 @@ var app = app || {};
 
         addPosts : function() {
             this.$content.html( '' );
-            this.addPortfolioTiles();
             app.posts.each( this.postView, this );
         },
 
@@ -75,7 +74,14 @@ var app = app || {};
 
         postView : function ( post ) {
             var view = new app.PostView( { model: post } );
-            this.$content.append( view.render().el.childNodes );                      
+
+            if ( view.model.get('type') == 'portfolio-item' ) {
+                console.log('success');
+                view = new app.PortfolioItemView( { model: post } );
+                this.$page.append( view.render().el );
+            } else {
+                this.$content.append( view.render().el.childNodes );                      
+            }
         }
     });
 })(jQuery);
