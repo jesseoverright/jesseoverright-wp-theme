@@ -4,10 +4,10 @@ var app = app || {};
 (function (){
     'use strict';
     
-    var PortfolioItems = Backbone.Collection.extend({
+    var PortfolioTiles = Backbone.Collection.extend({
         model: app.Portfolio
     });
 
-    app.portfolio_items = new PortfolioItems();
+    app.portfolio_tiles = new PortfolioTiles();
 
 })();

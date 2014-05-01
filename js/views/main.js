@@ -18,8 +18,9 @@ var app = app || {};
         initialize : function() {
             this.$content = $('#content');
             this.$page = $('#page');
+            this.$portfolio = $('#portfolio');
             this.listenTo( app.posts, 'reset', this.addPosts);
-            this.listenTo( app.portfolio_items, 'reset', this.addPortfolioItems)
+            this.listenTo( app.portfolio_tiles, 'reset', this.addPortfolioTiles)
         },
 
         initRouter : function ( evt ) {
@@ -27,23 +28,20 @@ var app = app || {};
 
             // Get the link
             var pathname = evt.target.pathname;
-                      
 
             // Trigger the router
             app.router.navigate( pathname, {trigger: true});
         },
 
-        addPortfolioItems : function () {
-            this.$page.html('');
+        addPortfolioTiles : function () {
+            this.$portfolio.remove();
 
-            if (app.portfolio_items.length > 0) {
-                this.$page.html( '<div id="portfolio"><div>' );
+            if (app.portfolio_tiles.length > 0) {
+                this.$page.prepend( '<div id="portfolio"><div>' );
                 this.$portfolio = $('#portfolio');
 
-                app.portfolio_items.each( this.portfolioView, this );
-                //this.$content.append( this.$content );
+                app.portfolio_tiles.each( this.portfolioTileView, this );
             }
-            this.$page.append( this.$content );
         },
 
         addPosts : function() {
@@ -51,9 +49,9 @@ var app = app || {};
             app.posts.each( this.postView, this );           
         },
 
-        portfolioView : function ( portfolio ) {
-            var view = new app.PortfolioView( { model: portfolio } );
-            this.$portfolio.append( view.render().el );
+        portfolioTileView : function ( portfolio ) {
+            var view = new app.PortfolioTileView( { model: portfolio } );
+            this.$portfolio.append( view.render().el.childNodes );
         },
 
         postView : function ( post ) {

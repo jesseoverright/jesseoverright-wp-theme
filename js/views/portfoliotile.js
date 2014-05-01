@@ -4,11 +4,7 @@ var app = app || {};
 (function ($) {
     'use strict';
 
-    app.PortfolioView = Backbone.View.extend({
-        //tagName : 'article',
-
-        //className : 'post',
-
+    app.PortfolioTileView = Backbone.View.extend({
         template : wp.template ( 'portfolio-tile' ),
 
         render : function() {

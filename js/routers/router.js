@@ -16,14 +16,13 @@ var app = app || {};
         },
 
         portfolio: function ( pathname ) {
-            console.log('working');
             // get portfolio items
             var url = '/wp-json/posts/?type=portfolio-item';
 
-            app.portfolio_items.url = url;           
-            app.portfolio_items.fetch( {reset : true });
+            app.portfolio_tiles.url = url;           
+            app.portfolio_tiles.fetch( {reset : true });
 
-            // get portfolio post
+            // get portfolio page
             app.posts.url = '/wp-json/pages/?filter[pagename]=portfolio';
             app.posts.fetch( {reset : true });
         },
@@ -37,8 +36,12 @@ var app = app || {};
            
 
             app.posts.url = url + '?render-as-json=true';           
-            app.posts.fetch( {reset : true });
-            app.portfolio_items.reset();
+            app.posts.fetch( {
+                reset : true,
+                success : function() {
+                    app.portfolio_tiles.reset();
+                }
+            });
         }
     });
 
