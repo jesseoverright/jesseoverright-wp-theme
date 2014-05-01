@@ -11,6 +11,10 @@
 <?php include locate_template('content-post.php'); ?>
 </script>
 
+<script type="text/template" id="tmpl-page">
+<?php include locate_template('content-page.php'); ?>
+</script>
+
 <script type="text/template" id="tmpl-portfolio-tile">
 <?php include locate_template('content-portfolio-tile.php'); ?>
 </script>
