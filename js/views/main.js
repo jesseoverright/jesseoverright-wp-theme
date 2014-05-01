@@ -12,7 +12,8 @@ var app = app || {};
         currentViews: {},
 
         events : {
-            'click .menu-item' : 'initRouter'
+            'click .menu-item' : 'initRouter',
+            'click .portfolio-tile a' : 'initRouter'
         },
 
         initialize : function() {
@@ -20,7 +21,7 @@ var app = app || {};
             this.$page = $('#page');
             this.$portfolio = $('#portfolio');
 
-            this.listenTo( app.posts, 'reset', this.addPosts);
+            this.listenTo( app.posts, 'reset', this.refreshPage);
             //this.listenTo( app.portfolio_tiles, 'reset', this.addPortfolioTiles)
         },
 
@@ -29,16 +30,32 @@ var app = app || {};
 
             // Get the link
             var pathname = evt.target.pathname;
+            
+            // in cases where a child element of an a tag was clicked, need to track down pathname of a tag.
+            if (typeof pathname == 'undefined') {
+                pathname = evt.currentTarget.pathname;
+            }
 
             // Trigger the router
             app.router.navigate( pathname, {trigger: true});
+        },
+
+        refreshPage : function () {
+            var main = this;
+
+            this.$page.fadeOut(function () {
+                main.addPosts();
+                main.addPortfolioTiles();
+            })
+
+            this.$page.fadeIn();
         },
 
         addPortfolioTiles : function () {
             this.$portfolio.remove();
 
             if (app.portfolio_tiles.length > 0) {
-                this.$page.prepend( '<div id="portfolio"><div>' );
+                this.$page.prepend( '<div id="portfolio"></div>' );
                 this.$portfolio = $('#portfolio');
 
                 app.portfolio_tiles.each( this.portfolioTileView, this );
@@ -46,15 +63,9 @@ var app = app || {};
         },
 
         addPosts : function() {
-            var main = this;
-
-            this.$page.fadeOut(function () {
-                main.$content.html( '' );
-                main.addPortfolioTiles();
-                app.posts.each( main.postView, main );    
-            });       
-
-            this.$page.fadeIn();
+            this.$content.html( '' );
+            this.addPortfolioTiles();
+            app.posts.each( this.postView, this );
         },
 
         portfolioTileView : function ( portfolio ) {
@@ -64,7 +75,7 @@ var app = app || {};
 
         postView : function ( post ) {
             var view = new app.PostView( { model: post } );
-            this.$content.append( view.render().el );                      
+            this.$content.append( view.render().el.childNodes );                      
         }
     });
 })(jQuery);

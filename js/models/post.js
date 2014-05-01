@@ -8,7 +8,8 @@ var app = app || {};
         defaults: {
             id: '',
             title: '',
-            content: ''
+            content: '',
+            type: 'post'
         }
     });
 })();

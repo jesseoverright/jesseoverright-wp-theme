@@ -7,12 +7,18 @@ var app = app || {};
     // router.js
     var Router = Backbone.Router.extend({
         routes: {
-            'portfolio/': 'portfolio',
-            'portfolio-item/*': 'portfolio_item',
-            //'/': 'portfolio',
+            // portfolio page
+            'portfolio/' : 'portfolio',
+
+            // portfolio items
+            'portfolio-item/*' : 'portfolio_item',
+
+            // homepage or blog
+            'blog/' : 'posts',
+            '': 'posts',
+
             // Catch all routes
-            '*notFound' : 'default',
-            '' : 'default'
+            '*notFound' : 'single_post'
         },
 
         portfolio: function ( pathname ) {
@@ -27,7 +33,19 @@ var app = app || {};
             app.posts.fetch( {reset : true });
         },
 
-        default: function ( pathname ) {
+        posts: function ( pathname ) {
+            var url = '/wp-json/posts/?type=post';
+
+            app.posts.url = url;
+            app.posts.fetch( {
+                reset: true,
+                success : function() {
+                    app.portfolio_tiles.reset();
+                }
+            });
+        },
+
+        single_post: function ( pathname ) {
             var url = '/';
 
             if ( !_.isNull( pathname ) ) {
