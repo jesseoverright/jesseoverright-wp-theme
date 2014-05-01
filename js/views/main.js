@@ -16,8 +16,8 @@ var app = app || {};
         },
 
         initialize : function() {
-            this.$posts = $('#content');
-            this.$portfolio = $('#portfolio');
+            this.$content = $('#content');
+            this.$page = $('#page');
             this.listenTo( app.posts, 'reset', this.addPosts);
             this.listenTo( app.portfolio_items, 'reset', this.addPortfolioItems)
         },
@@ -34,12 +34,20 @@ var app = app || {};
         },
 
         addPortfolioItems : function () {
-            this.$portfolio.html( '' );
-            app.portfolio_items.each( this.portfolioView, this );
+            this.$page.html('');
+
+            if (app.portfolio_items.length > 0) {
+                this.$page.html( '<div id="portfolio"><div>' );
+                this.$portfolio = $('#portfolio');
+
+                app.portfolio_items.each( this.portfolioView, this );
+                //this.$content.append( this.$content );
+            }
+            this.$page.append( this.$content );
         },
 
         addPosts : function() {
-            this.$posts.html( '' );
+            this.$content.html( '' );
             app.posts.each( this.postView, this );           
         },
 
@@ -50,7 +58,7 @@ var app = app || {};
 
         postView : function ( post ) {
             var view = new app.PostView( { model: post } );
-            this.$posts.append( view.render().el );                      
+            this.$content.append( view.render().el );                      
         }
     });
 })(jQuery);
