@@ -19,8 +19,9 @@ var app = app || {};
             this.$content = $('#content');
             this.$page = $('#page');
             this.$portfolio = $('#portfolio');
+
             this.listenTo( app.posts, 'reset', this.addPosts);
-            this.listenTo( app.portfolio_tiles, 'reset', this.addPortfolioTiles)
+            //this.listenTo( app.portfolio_tiles, 'reset', this.addPortfolioTiles)
         },
 
         initRouter : function ( evt ) {
@@ -45,8 +46,15 @@ var app = app || {};
         },
 
         addPosts : function() {
-            this.$content.html( '' );
-            app.posts.each( this.postView, this );           
+            var main = this;
+
+            this.$page.fadeOut(function () {
+                main.$content.html( '' );
+                main.addPortfolioTiles();
+                app.posts.each( main.postView, main );    
+            });       
+
+            this.$page.fadeIn();
         },
 
         portfolioTileView : function ( portfolio ) {
