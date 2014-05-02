@@ -61,7 +61,7 @@ function add_scripts_and_styles() {
         wp_enqueue_script( $file, get_template_directory_uri() . '/' . $file, array('wp-backbone'), '2014-04-30', true);
     }
 
-    wp_enqueue_script( 'js/jo-backbone.js' , get_template_directory_uri() . '/js/jo-backbone.js', $backbone_js_files, '2014-04-28', true);
+    wp_enqueue_script( 'js/jo-backbone.js' , get_template_directory_uri() . '/js/jo-backbone.js', array_merge($backbone_js_files, array('jesseoverright-script') ), '2014-04-28', true);
 
     // add the theme helper javascript
     wp_enqueue_script( 'jesseoverright-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '2013-12-13', true );

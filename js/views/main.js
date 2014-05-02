@@ -17,8 +17,13 @@ var app = app || {};
         },
 
         initialize : function() {
-            this.$content = $('#content');
             this.$page = $('#page');
+            
+            // add a content id if none exists
+            if (this.$page.find('#content').length == 0) {
+                this.$page.append('<div id="content"></div>');
+            }
+            this.$content = $('#content');
             this.$portfolio = $('#portfolio');
 
             this.listenTo( app.posts, 'reset', this.refreshPage);
@@ -80,6 +85,9 @@ var app = app || {};
                 view = new app.PortfolioItemView( { model: post } );
                 this.$page.append( view.render().el );
             } else {
+                if ($('#portfolio-item-content').length > 0) 
+                    $('#portfolio-item-content').remove();
+
                 this.$content.append( view.render().el.childNodes );                      
             }
         }
