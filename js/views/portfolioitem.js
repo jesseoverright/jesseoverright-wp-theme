@@ -17,9 +17,12 @@ var app = app || {};
             this.$el.css('background-image', "url('" + background_image + "')").html( this.template( this.model.toJSON() ) );
             this.$el.find('article').css('margin-top', portfolio_height - 175);
 
-            // enable parallax effect
-            $(window).on('scroll', function(evt, background_image, portfolio_height){
-                portfolio_parallax(background_image, portfolio_height);
+            // reenable scroll events
+            $(window).off("scroll").on("scroll", function(){
+                enable_mini_menu();
+
+                // set up portfolio item parallax
+                portfolio_parallax.call(this, background_image, portfolio_height);
             });
 
             return this;
