@@ -48,23 +48,7 @@
 </div>
 
 <div id="content">
-
-    <article>
-
-    <?php the_content() ?>
-
-    <?php $features = get_terms('key-features') ?>
-    <?php if (count($features) > 0) : ?>
-        <ul class="key-features">
-            <li class="header">Features:</li>
-            <?php foreach ($features as $feature) : ?>
-                <li><a href="<?= get_term_link($feature) ?>" rel="tag"><?= $feature->name ?></a></li>
-            <?php endforeach ?>
-        </ul>
-    </div>
-    <?php endif ?>
-
-    </article>
+    <?php get_template_part( 'content', 'portfolio-page' ); ?>
 </div>
 
 
