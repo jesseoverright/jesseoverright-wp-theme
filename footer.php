@@ -23,6 +23,10 @@
 <?php include locate_template('content-portfolio-item.php'); ?>
 </script>
 
+<script type="text/template" id="tmpl-portfolio-page">
+<?php include locate_template('content-portfolio-page.php'); ?>
+</script>
+
 <?php wp_footer(); ?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
