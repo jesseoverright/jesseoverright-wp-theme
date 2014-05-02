@@ -14,5 +14,5 @@
     <?php endif ?>
     <h3 class="project-url"><a href="<?php if ($is_js) echo '{{{ data.post_meta.project_url }}}'; else get_post_meta($post->ID, 'project_url', true)?>"><?php if ($is_js) echo '{{{ data.post_meta.project_url }}}'; else str_replace('http://','',get_post_meta($post->ID, 'project_url', true)) ?></a></h3>
     <?php if ($is_js) echo '{{{ data.content }}}'; else the_content(); ?>
-    <h4><?php if ($is_js) echo '{{{ data.post_meta.project_date }}}'; else get_post_meta($post->ID, 'project_date', true) ?></h4>
+    <h4><?php if ($is_js) echo '{{{ data.post_meta.project_date }}}'; else echo get_post_meta($post->ID, 'project_date', true) ?></h4>
 </article>

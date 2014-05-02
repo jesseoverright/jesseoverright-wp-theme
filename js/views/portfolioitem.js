@@ -11,10 +11,12 @@ var app = app || {};
 
         render : function() {
             this.id = 'portfolio-item-' + this.model.get('id');
-            var background_image = this.model.get('featured_image')['source'];//('featured_image').get('source');
-            var portfolio_height = jQuery(window).height()-jQuery('#page').offset().top;
+            var portfolio_background_image = this.model.get('featured_image')['source'];
 
-            this.$el.css('background-image', "url('" + background_image + "')").html( this.template( this.model.toJSON() ) );
+            // #page will be faded out on load, so use footer
+            var portfolio_height = $(window).height() - $('footer').offset().top;
+
+            this.$el.html( this.template( this.model.toJSON() ) ).css('background-image', "url('" + portfolio_background_image + "')");
             this.$el.find('article').css('margin-top', portfolio_height - 175);
 
             // reenable scroll events
@@ -22,7 +24,7 @@ var app = app || {};
                 enable_mini_menu();
 
                 // set up portfolio item parallax
-                portfolio_parallax.call(this, background_image, portfolio_height);
+                portfolio_parallax.call(this, 'url(' + portfolio_background_image + ')', portfolio_height);
             });
 
             return this;
