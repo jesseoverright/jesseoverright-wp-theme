@@ -18,6 +18,32 @@ module.exports = function(grunt) {
         }
       }
     },
+    cmq: {
+      options: {
+        log: false
+      },
+      your_target: {
+        files: {
+          '.': ['sass/*.css']
+        }
+      }
+    },
+    cssmin: {
+      minify: {
+        expand: true,
+        //cwd: '.',
+        src: ['*.css'],
+        dest: '.'
+      },
+      add_banner: {
+        options: {
+          banner: '/*\n  Theme Name: Jesse Overright\n  Theme URI: http://jesseoverright.com/\n  Author: Jesse Overright\n  Author URI: http://jesseoverright.com/\n  Description: This is a custom theme build for jesseoverright.com.  It\'s a portfolio style theme that adds a new custom content type, portfolio item.\n  Version: 0.5.14 (beta)\n  License: GNU General Public License v2 or later\n  License URI: http://www.gnu.org/licenses/gpl-2.0.html\n  Tags: portfolio */'
+        },
+        files: {
+          'style.css': 'style.css'
+        }
+      }
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> minified scripts */\n'
@@ -45,7 +71,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-combine-media-queries');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['concat', 'compass', 'uglify']);
+  grunt.registerTask('default', ['concat', 'compass', 'cmq', 'cssmin', 'uglify']);
 
 };
