@@ -1,0 +1,16 @@
+#project-url input, #project-date input {
+    width: 100%;
+}
+
+.column-featured-image {
+    width: 20%;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.column-key-features {
+    width: 30%;
+}

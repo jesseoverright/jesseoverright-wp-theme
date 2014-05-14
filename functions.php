@@ -64,10 +64,7 @@ function add_scripts_and_styles() {
     wp_enqueue_script( 'js/jo-backbone.js' , get_template_directory_uri() . '/js/jo-backbone.js', array_merge($backbone_js_files, array('jesseoverright-script') ), '2014-04-28', true);
 
     // add the theme helper javascript
-    wp_enqueue_script( 'jesseoverright-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '2013-12-13', true );
-
-    // add retina.js for image retina display support
-    wp_enqueue_script( 'retina_js', get_template_directory_uri() . '/js/retina-1.1.0.min.js', '', '2014-01-08', true);
+    wp_enqueue_script( 'jesseoverright-scripts', get_template_directory_uri() . '/scripts.min.js', array( 'jquery' ), '2014-05-14', true );
 
     // remove the grunion.css styles from contact form
     wp_deregister_style('grunion.css');

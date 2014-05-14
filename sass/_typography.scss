@@ -1,0 +1,126 @@
+@import url('http://fonts.googleapis.com/css?family=Karla');
+
+$fonts: Karla, "Helvetica Neue", Helvetica, sans-serif;
+$font-size: 16px;
+
+$primary-color: #C4B6CF;
+$secondary-color: #434D68;
+$tertiary-color: #EF9C43;
+$padding-size: 15px;
+
+@mixin paragraph() {
+    padding-bottom: $padding-size;
+    font-size: $font-size;
+    line-height: 1.25em;
+    word-wrap: break-word;
+}
+
+body{
+    font-family: $fonts;
+    line-height: 1.25em;
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    @include paragraph();
+}
+
+a {
+    color: darken($tertiary-color, 15%);
+    text-decoration: none;
+}
+
+a:visited {
+    color: $secondary-color;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    @include paragraph();
+    font-size: 2.75 * $font-size;
+    padding-bottom: $padding-size/2;
+    color: darken($secondary-color, 20%);
+    font-weight: bold;
+}
+
+h2 {
+    @include paragraph();
+    color: darken($secondary-color, 20%);
+    font-size: 1.75 * $font-size;
+    font-weight: bold;
+}
+
+h3 {
+    @include paragraph();
+    color: darken($primary-color, 30%);
+    font-size: 1.5 * $font-size;
+}
+
+h4 {
+    @include paragraph();
+    font-weight: bold;
+    font-size: 1.25 * $font-size;
+}
+
+ul {
+    padding: $padding-size;
+}
+
+li {
+    @include paragraph();
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+blockquote {
+    margin-left: $padding-size;
+
+    p {
+        font-size: 1.66*$font-size;
+        font-style: italic;
+
+        &:before {
+            content: '“';
+        }
+        &:after {
+            content: '”';
+        }
+    }
+}
+
+form {
+    input[type="text"], input[type="email"], textarea {
+        width: 97%;
+        font-size: 1.25*$font-size;
+        padding: 1%;
+        border: 2px inset;
+        margin-bottom: $padding-size;
+        max-height: 190px;
+    }
+
+    input[type="submit"] {
+        font-size: 1.5*$font-size;
+    }
+}
+
+.alignleft {
+    float: left;
+    margin: 0 $padding-size $padding-size 0;
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 $padding-size $padding-size;
+}
+
+@media all and (max-width:600px) {
+    p {
+        word-wrap: break-word;
+    }
+}
