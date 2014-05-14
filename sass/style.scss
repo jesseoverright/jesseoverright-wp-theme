@@ -1,0 +1,393 @@
+/*
+  Theme Name: Jesse Overright
+  Theme URI: http://jesseoverright.com/
+  Author: Jesse Overright
+  Author URI: http://jesseoverright.com/
+  Description: This is a custom theme build for jesseoverright.com.  It's a portfolio style theme that adds a new custom content type, portfolio item.
+  Version: 0 (beta)
+  License: GNU General Public License v2 or later
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Tags: portfolio */
+
+@import 'compass/reset';
+@import 'compass/css3';
+
+@import 'typography';
+
+$page-width: 800px;
+
+$ipad-width: 870px;
+$mobile-width: 600px;
+
+@mixin content-block() {
+    background-color: #fff;
+    padding: 2*$padding-size 5% 0.66*$padding-size;
+    margin-bottom: 2*$padding-size;
+    @include box-shadow(lighten($secondary-color, 50%) 3px 3px 2px);
+    overflow: hidden;
+
+    h1 {
+        border-bottom: 1px solid $secondary-color;
+        margin-bottom: 2*$padding-size;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        @include box-shadow(lighten($tertiary-color, 25%) 3px 3px 2px);
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+}
+
+@mixin social-icons() {
+    float: right;
+    background: transparent;
+    padding-bottom: 5px;
+    padding-right: 35px;
+
+    li {
+        float: left;
+        background-color: transparent;
+        list-style-type: none;
+        margin-right: $padding-size;
+        padding-bottom:0;
+        img, svg {
+            width: 55px;
+            height: 55px;
+        }
+    }
+}
+
+@mixin category-tags($color) {
+    padding: 0 0 $padding-size;
+    clear: both;
+
+    li {
+        list-style-type: none;
+        display: inline-block;
+        background-color: darken($color, 15%);
+        padding: $padding-size/3 $padding-size/2;
+        margin: 0 0.66*$padding-size $padding-size/2 0;
+
+        @include box-shadow(#666 3px 2px 2px);
+
+        a {
+            color: #fff;
+        }
+
+    }
+
+    .header {
+        background-color: #999;
+        color: #fff;
+    }
+}
+
+@import 'comments';
+
+html {
+    min-height: 100%;
+}
+body {
+    @include background-image(linear-gradient(#eeeeee, #ededed 60%, #dddddd));
+}
+
+header {
+    background-color: $primary-color;
+
+    .site-header {
+        padding: $padding-size 35px;
+        font-size: 2.5*$font-size;
+
+        a {
+            color: $secondary-color;
+        }
+
+        @media (max-width: $mobile-width) {
+            font-size: 1.5*$font-size;
+            text-align: center;
+        }
+    }
+
+    .social-icons {
+        @include social-icons();
+
+        @media (max-width:$ipad-width) {
+            li {
+                img, svg {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        @media (max-width: $mobile-width) {
+            display: none;
+        }
+    }
+}
+
+.navigation {
+    margin-bottom: $padding-size;
+
+    ul {
+        overflow: hidden;
+        padding: 0;
+        height: 40px;
+        //background-color: #efefef;
+    }
+    li {
+        float: left;
+        min-width: 145px;
+        font-size: $font-size*1.25;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
+        a, a:visited {
+            color: #fff;
+            text-decoration:none;
+            display: block;
+            padding: $padding-size/2;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+    li:nth-child(3n+1) {
+        background-color: $primary-color;
+    }
+    li:nth-child(3n+2) {
+        background-color: $secondary-color;
+    }
+    li:nth-child(3n+3){
+        background-color: $tertiary-color;
+    }
+
+    @media (max-width:$mobile-width) {
+        li {
+            width: 100%;
+        }
+
+        ul {
+            height: auto;
+        }
+    }
+}
+
+.mini-nav {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    border-top: 8px solid $primary-color;
+    width: 100%;
+    @include background-image(linear-gradient(#999999, transparent 40%));
+
+    @media (max-width:$mobile-width) {
+        li {
+            width: auto;
+            min-width: 100px;//100px;
+            font-size: $font-size;
+        }
+
+        ul {
+            height: 35px;
+        }
+    }
+}
+
+body.admin-bar .mini-nav {
+    top: 32px;
+}
+
+#page {
+    margin: 0 auto;
+}
+
+#content {
+    max-width: $page-width;
+    width: 90%;
+    margin: 0 auto;
+    clear: both;
+}
+
+#portfolio-item-content {
+    margin: 0 auto;
+    overflow: hidden;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat:no-repeat;
+
+    @media (max-width:$mobile-width) {
+        max-width: 90%;
+        overflow: visible;
+    }
+
+    article {
+        position: relative;
+
+        @media (max-device-width:1024px) {
+            margin-top: 450px !important;
+        }
+
+        @media (max-width:$mobile-width) {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+#portfolio {
+    @extend #content;
+    overflow: visible;
+    max-width: none;
+}
+
+.portfolio-tile {
+    @include content-block();
+    padding: 2.5%;
+    margin: 1.5%;
+    width: 25.3333333%;
+    float: left;
+
+    h3 {
+        text-align: center;
+        padding: $padding-size/2 0 0;
+        height: 2em;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @media (max-width:$ipad-width) {
+        width: 43.5%;
+
+        &:nth-child(2n+1) {
+            margin-left: 0;
+        }
+
+        &:nth-child(2n+2) {
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width:$mobile-width) {
+        width: 90%;
+        padding: 1.33*$padding-size 5% 5%;
+        margin: 0 0 1.33*$padding-size 0;
+    }
+}
+
+article {
+    @include content-block();
+    width: 90%;
+    max-width: $page-width;
+    margin: 0 auto 2*$padding-size;
+
+    .post-meta {
+        color: darken($tertiary-color, 15%);
+        float: right;
+    }
+
+    .key-features {
+        @include category-tags($primary-color);
+    }
+
+    .categories {
+        @include category-tags(lighten($tertiary-color, 15%));
+    }
+
+    .tags {
+        @include category-tags($primary-color);
+    }
+
+    .comment-count {
+        @include category-tags(lighten($secondary-color, 40%));
+    }
+}
+
+.wp-caption {
+    max-width: 100%;
+
+    @media (max-width:$mobile-width) {
+        // fix for wordpress' caption issues
+        width: 100% !important;
+    }
+
+    .wp-caption-text {
+        border-left: 2px solid $primary-color;
+        margin-top: 5px;
+        font-size: 0.85*$font-size;
+        padding-left: 5px;
+        padding-bottom: 0;
+    }
+}
+
+footer {
+    background-color: $primary-color;
+    margin: 0 auto 20px;
+    max-width: 90%;
+    width: $page-width;
+    clear:both;
+    overflow: hidden;
+
+    p {
+        padding: $padding-size 5%;
+        font-size: 1.25*$font-size;
+        color: #fff;
+        float: left;
+
+        @media (max-width:$mobile-width) {
+            padding-bottom: 0;
+            float: none;
+            margin: 0 auto;
+            width: 265px;
+        }
+    }
+
+    .social-icons {
+        @include social-icons();
+
+        padding-top: 0;
+
+        li {
+            padding: $padding-size 0 0 $padding-size;
+            margin-right: 0;
+            img, svg {
+                width: 24px;
+                height: 24px
+            }
+        }
+
+        @media (max-width: $mobile-width) {
+            float: none;
+            margin: 0 auto;
+            width: 235px;
+            li {
+                margin-bottom: $padding-size;
+            }
+        }
+    }
+}
+
+@media all and (max-width:782px) {
+    body.admin-bar .mini-nav {
+        top: 46px;
+    }
+}
+
+@media all and (max-width:$mobile-width) {
+    h1 {
+        font-size: 2*$font-size;
+    }
+
+    .size-medium {
+        width: 100%;
+    }
+
+    body.admin-bar .mini-nav {
+        top: 0;
+    }
+}

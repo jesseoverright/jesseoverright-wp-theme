@@ -1,0 +1,50 @@
+.comment {
+    @include content-block();
+    padding-bottom: 2*$padding-size;
+
+    .comment-author {
+        @extend h2;
+        border-bottom: 1px solid $secondary-color;
+        margin-bottom: 2*$padding-size;
+    }
+
+    .comment-awaiting-moderation {
+        color: darken($tertiary-color, 15%);
+        text-align: center;
+    }
+
+    .comment-text {
+        p {
+            font-size: 1.33*$font-size;
+            &:before {
+                content: '“';
+            }
+            &:after {
+                content: '”';
+            }
+        }
+    }
+
+    .comment-meta {
+        a {
+            color: darken($tertiary-color, 15%);
+        }
+        float: right;
+    }
+
+    // for nested comments
+    .comment {
+        @include box-shadow($primary-color -2px 0 0);
+        margin: 2*$padding-size 0 0.66*$padding-size;
+        padding: 10px 5%;
+    }
+}
+
+#respond {
+    @include content-block();
+
+    .logged-in-as, .form-allowed-tags {
+        font-size: 0.8*$font-size;
+        margin-top: -0.8*$padding-size;
+    }
+}
