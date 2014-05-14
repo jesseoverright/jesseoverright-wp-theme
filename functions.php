@@ -36,35 +36,8 @@ function add_scripts_and_styles() {
     // add the main stylesheet
     wp_enqueue_style( 'jesseoverright-style', get_stylesheet_uri() );
 
-    // add backbone javascripts
-    $backbone_js_files = array();
-
-    // models
-    $backbone_js_files[] = 'js/models/post.js';
-    $backbone_js_files[] = 'js/models/portfolio.js';
-    
-    // collections
-    $backbone_js_files[] = 'js/collections/posts.js';
-    $backbone_js_files[] = 'js/collections/portfoliotiles.js';
-
-    // views
-    $backbone_js_files[] = 'js/views/main.js';
-    $backbone_js_files[] = 'js/views/post.js';
-    $backbone_js_files[] = 'js/views/portfolioitem.js';
-    $backbone_js_files[] = 'js/views/portfoliotile.js';
-
-    // routers
-    $backbone_js_files[] = 'js/routers/router.js';
-    
-
-    foreach ($backbone_js_files as $file) {
-        wp_enqueue_script( $file, get_template_directory_uri() . '/' . $file, array('wp-backbone'), '2014-04-30', true);
-    }
-
-    wp_enqueue_script( 'js/jo-backbone.js' , get_template_directory_uri() . '/js/jo-backbone.js', array_merge($backbone_js_files, array('jesseoverright-script') ), '2014-04-28', true);
-
     // add the theme helper javascript
-    wp_enqueue_script( 'jesseoverright-scripts', get_template_directory_uri() . '/scripts.min.js', array( 'jquery' ), '2014-05-14', true );
+    wp_enqueue_script( 'jesseoverright-scripts', get_template_directory_uri() . '/scripts.min.js', array( 'jquery', 'wp-backbone' ), '2014-05-14', true );
 
     // remove the grunion.css styles from contact form
     wp_deregister_style('grunion.css');
