@@ -61,7 +61,6 @@
                 <li><a href="<?= get_term_link($feature) ?>" rel="tag"><?= $feature->name ?></a></li>
             <?php endforeach ?>
         </ul>
-    </div>
     <?php endif ?>
 
     </article>
