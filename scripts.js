@@ -237,7 +237,7 @@ var app = app || {};
 
         portfolio: function ( pathname ) {
             // get portfolio items
-            var url = '/wp-json/posts/?type=portfolio-item';
+            var url = '/wp-content/themes/jesseoverright/portfolio-items-json.php';
 
             app.portfolio_tiles.url = url;           
             app.portfolio_tiles.fetch( {reset : true });
