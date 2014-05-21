@@ -215,7 +215,7 @@ var app = app || {};
 })();;/* global backbone, jQuery, _ */
 var app = app || {};
 
-(function (){
+(function ($){
     'use strict';
 
     // router.js
@@ -236,8 +236,17 @@ var app = app || {};
         },
 
         portfolio: function ( pathname ) {
+
             // get portfolio items
-            var url = '/wp-content/themes/jesseoverright/portfolio-items-json.php';
+            var url = '/wp-json/posts/';
+
+            // get the custom portfolio items order filter query
+            $.ajax({
+                url: 'http://wordpress.dev/wp-content/themes/jesseoverright/portfolio-items-json.php',
+                async: false
+            }).done(function (data) {
+                    url  += data;
+                });
 
             app.portfolio_tiles.url = url;           
             app.portfolio_tiles.fetch( {reset : true });
@@ -282,7 +291,7 @@ var app = app || {};
         pushState: true,
         silent: true
     });
-})();;/* global backbone, jQuery, _ */
+})(jQuery);;/* global backbone, jQuery, _ */
 var app = app || {};
 
 // start app
