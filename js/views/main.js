@@ -13,7 +13,8 @@ var app = app || {};
 
         events : {
             'click .menu-item' : 'initRouter',
-            'click .portfolio-tile a' : 'initRouter'
+            'click .portfolio-tile a' : 'initRouter',
+            'click .key-features a' : 'initRouter'
         },
 
         initialize : function() {
@@ -81,7 +82,6 @@ var app = app || {};
             var view = new app.PostView( { model: post } );
 
             if ( view.model.get('type') == 'portfolio-item' ) {
-                console.log('success');
                 view = new app.PortfolioItemView( { model: post } );
                 this.$page.append( view.render().el );
             } else {

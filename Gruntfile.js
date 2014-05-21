@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['js/*.js'],
+        files: ['js/**/*.js'],
         tasks: ['concat', 'uglify']
       },
       compass: {
@@ -42,7 +42,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 

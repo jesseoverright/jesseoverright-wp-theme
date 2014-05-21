@@ -43,7 +43,8 @@ var app = app || {};
 
         events : {
             'click .menu-item' : 'initRouter',
-            'click .portfolio-tile a' : 'initRouter'
+            'click .portfolio-tile a' : 'initRouter',
+            'click .key-features a' : 'initRouter'
         },
 
         initialize : function() {
@@ -111,7 +112,6 @@ var app = app || {};
             var view = new app.PostView( { model: post } );
 
             if ( view.model.get('type') == 'portfolio-item' ) {
-                console.log('success');
                 view = new app.PortfolioItemView( { model: post } );
                 this.$page.append( view.render().el );
             } else {
@@ -224,8 +224,8 @@ var app = app || {};
             // portfolio page
             'portfolio/' : 'portfolio',
 
-            // portfolio items
-            //'portfolio/*' : 'single_post',
+            // categories
+            'key-feature/*term' : 'key_features',
 
             // homepage or blog
             'blog/' : 'posts',
@@ -235,14 +235,26 @@ var app = app || {};
             '*notFound' : 'single_post'
         },
 
-        portfolio: function ( pathname ) {
+        key_features: function ( term ) {
+            console.log (term);
+            var url = '/wp-json/posts/?type=portfolio-item&filter[key-features]=' + term;
+            console.log(url);
+            app.portfolio_tiles.url = url;
+            app.portfolio_tiles.fetch( { reset: true });
+
+            app.posts.url = '/wp-json/pages/?filter[pagename]=portfolio';
+            app.posts.fetch( {reset : true });
+
+        },
+
+        portfolio: function () {
 
             // get portfolio items
             var url = '/wp-json/posts/';
 
             // get the custom portfolio items order filter query
             $.ajax({
-                url: 'http://wordpress.dev/wp-content/themes/jesseoverright/portfolio-items-json.php',
+                url: 'http://wordpress.dev/wp-content/themes/jesseoverright/portfolio-items-order.php',
                 async: false
             }).done(function (data) {
                     url  += data;
@@ -256,7 +268,7 @@ var app = app || {};
             app.posts.fetch( {reset : true });
         },
 
-        posts: function ( pathname ) {
+        posts: function () {
             var url = '/wp-json/posts/?type=post';
 
             app.posts.url = url;
