@@ -18,16 +18,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    cmq: {
-      options: {
-        log: false
-      },
-      your_target: {
-        files: {
-          '.': ['sass/*.css']
-        }
-      }
-    },
     cssmin: {
       minify: {
         expand: true,
@@ -71,9 +61,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-combine-media-queries');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['concat', 'compass', 'cmq', 'cssmin', 'uglify']);
+  grunt.registerTask('default', ['concat', 'compass', 'cssmin', 'uglify']);
 
 };
