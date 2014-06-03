@@ -6,6 +6,8 @@
     <meta name="description" content="<?= bloginfo('description') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href='//fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+
     <link rel="shortcut icon" href="<?= get_stylesheet_directory_uri() ?>/favicon.ico" />
     <link rel="apple-touch-icon" href="<?= get_stylesheet_directory_uri() ?>/apple-touch-icon-precomposed.png" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
